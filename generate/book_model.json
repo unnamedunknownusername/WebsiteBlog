@@ -28,8 +28,15 @@
 [
 
 {
-"name": "Errarata and Improvements",
-"notebook_path": "notebooks/misc/Errors.jl",
+"name": "Why I Love Pluto",
+"notebook_path": "notebooks/misc/WhyILovePluto.jl",
+"video_id": "",
+"preview_image_url": ""
+}
+
+{
+"name": "Why I love Julia",
+"notebook_path": "notebooks/misc/WhyILoveJulia.jl",
 "video_id": "",
 "preview_image_url": ""
 }
