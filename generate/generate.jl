@@ -52,19 +52,19 @@ md"""
 """
 
 # ╔═╡ 2bee2fc7-3322-457f-a835-028c80eaf059
-TITLE = "A Great Course"
+TITLE = "Unnamed Website Blog"
 
 # ╔═╡ a0057e4c-0bcf-4970-8a2b-0412ad5af510
-SUBTITLE = "Content and Code"
+SUBTITLE = "I post things here..."
 
 # ╔═╡ 4be56e57-fea0-4fbe-9659-44bed594b1b2
-INSTITUTION = "University of Greatness"
+INSTITUTION = "Somewhere in the universe"
 
 # ╔═╡ c9f17f9f-766a-4137-92c5-f8173561a7bc
-INSTITUTION_URL = "https://www.tinbergen.nl"
+INSTITUTION_URL = "https://github.com/unnamedunknownusername"
 
 # ╔═╡ ab7186a4-2287-41da-a939-70f142bfeacd
-TERM = "Spring 2022"
+TERM = "Since 2022"
 
 # ╔═╡ a31d893d-2cde-4228-a506-6af013fe1f3e
 LOGO_FILE = "julia-logo.svg"
@@ -104,10 +104,10 @@ show_section_number = false
 
 # ╔═╡ 01a2336a-5c04-4d5a-bb0b-a9c704517dbf
 pages = [
-	(page = "/logistics/", title = "Class Logistics"),
-	(page = "/syllabus/", title = "Syllabus"),
-	(page = "/installation/", title = "Software installation"),
-	(page = "/cheatsheets/", title = "Cheatsheets")
+	#(page = "/logistics/", title = "Class Logistics"),
+	#(page = "/syllabus/", title = "Syllabus"),
+	#(page = "/installation/", title = "Software installation"),
+	#(page = "/cheatsheets/", title = "Cheatsheets")
 ]
 
 # ╔═╡ c0768146-5ea0-4736-94f8-2c1a2affa922
@@ -222,8 +222,7 @@ end
 
 # ╔═╡ 3e93e57c-3660-416f-9874-d43abf99e60e
 INSTRUCTORS = [
-	(name = "Person 1", url = ""),
-	(name = "Person 2", url = "")
+	(name = "Unknown", url = "https://github.com/unnamedunknownusername")
 ] |> instructors
 
 # ╔═╡ d78c58e5-3ecb-45ee-972e-20fc90ece3cc
@@ -285,7 +284,7 @@ function sidebar_code(book_model)
     <br>
     $(map(enumerate(book_model)) do (chapter_number, chap)
 		@htl("""
-		<div class="course-section">Module $(chapter_number): $(chap.title)</div>
+		<div class="course-section">$(chap.title)</div>
 		
 		$(map(enumerate(chap.contents)) do (section_number, section)
 
