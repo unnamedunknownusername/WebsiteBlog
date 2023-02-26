@@ -1,6 +1,4 @@
-# Course Website of _The New Course_
+# Hi. Welcome to my unnamed website/blog
 
-This website is under construction.
+This website is in a constant state of development, perhaps one day it will stop changing.
 
-> **Acknowledgement** \\
-> The design of this website is based on _**Computational Thinking**, a live online Julia/Pluto textbook._ [(computationalthinking.mit.edu)](https://computationalthinking.mit.edu)
