@@ -105,7 +105,7 @@ show_section_number = false
 # ╔═╡ 01a2336a-5c04-4d5a-bb0b-a9c704517dbf
 pages = [
 	(page = "/thanks/", title = "Acknowledgements"),
-	#(page = "/syllabus/", title = "Syllabus"),
+	(page = "/errors/", title = "Syllabus"),
 	#(page = "/installation/", title = "Software installation"),
 	#(page = "/cheatsheets/", title = "Cheatsheets")
 ]
@@ -266,7 +266,7 @@ function sidebar_code(book_model)
     <br>
     <img src="$(path_to_asset(LOGO_FILE))" style="margin-left:1em; width: 80px; height: auto; display: inline">
     <div style="font-weight: bold; margin-bottom: 0.5em">
-	$(href("$(SLASH_PREPATH)/semesters/", TERM))
+	$(TERM)
 	<span style="opacity: 0.6;">|
 	$(href(INSTITUTION_URL,INSTITUTION))
 	</span>
