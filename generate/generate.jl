@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.22
+# v0.19.8
 
 using Markdown
 using InteractiveUtils
@@ -52,22 +52,22 @@ md"""
 """
 
 # ╔═╡ 2bee2fc7-3322-457f-a835-028c80eaf059
-TITLE = "Unnamed Website Blog"
+TITLE = "A Great Course"
 
 # ╔═╡ a0057e4c-0bcf-4970-8a2b-0412ad5af510
 SUBTITLE = "Content and Code"
 
 # ╔═╡ 4be56e57-fea0-4fbe-9659-44bed594b1b2
-INSTITUTION = "" #"University of greatness"
+INSTITUTION = "University of Greatness"
 
 # ╔═╡ c9f17f9f-766a-4137-92c5-f8173561a7bc
-INSTITUTION_URL = "" #"https://www.tinbergen.nl"
+INSTITUTION_URL = "https://www.tinbergen.nl"
 
 # ╔═╡ ab7186a4-2287-41da-a939-70f142bfeacd
-TERM = "" #"Spring 2022"
+TERM = "Spring 2022"
 
 # ╔═╡ a31d893d-2cde-4228-a506-6af013fe1f3e
-LOGO_FILE = "" #"julia-logo.svg"
+LOGO_FILE = "julia-logo.svg"
 
 # ╔═╡ dbb5e02a-2485-4ada-98d1-cc24fd6fc418
 md"""
@@ -146,15 +146,6 @@ pluto_notebooks_output_dir = mkpath(joinpath(output_dir, "notebooks"))
 # ╔═╡ 68bff1d9-8fe4-4b88-82a2-49bbf6209019
 import StructTypes
 
-# ╔═╡ 0fbcf5d1-b342-427c-a09d-e2f84725ba7f
-begin
-Base.@kwdef struct Chapter
-	title::String
-	contents::Vector{Section}=Section[]
-end
-	StructTypes.StructType(::Type{Chapter}) = StructTypes.Struct()
-end
-
 # ╔═╡ 0abe998c-f69c-49de-a49f-6c4bbcb6c4e1
 begin
 	Base.@kwdef struct Section
@@ -165,6 +156,15 @@ begin
 	end
 		StructTypes.StructType(::Type{Section}) = StructTypes.Struct()
 	
+end
+
+# ╔═╡ 0fbcf5d1-b342-427c-a09d-e2f84725ba7f
+begin
+Base.@kwdef struct Chapter
+	title::String
+	contents::Vector{Section}=Section[]
+end
+	StructTypes.StructType(::Type{Chapter}) = StructTypes.Struct()
 end
 
 # ╔═╡ 43969dd1-f175-4399-8758-5a69f94595e7
@@ -192,27 +192,6 @@ file_server_address(paths::AbstractString...) = join([
 	sleep(1)
 	error("asdf")
 end
-
-# ╔═╡ a965eb6b-8c70-4986-a7b1-99c820c45716
-@skip_as_script @use_task([franklin_page_dir, file_server_port]) do
-
-	run(`$(Deno_jll.deno()) run --allow-net --allow-read https://deno.land/std@0.115.0/http/file_server.ts $(franklin_page_dir) --cors --port $(file_server_port)`)
-
-end
-
-# ╔═╡ 140990ab-0a8c-4000-b17d-30e2f33dfd5f
-web_preview(args...) = let
-	href = file_server_address(args...)
-	@htl("""
-	<div style='font-family: system-ui; margin: .5em;'>Showing preview of <a href=$(href) target="_blank">$href</a></div>
-	<div style="border: 10px solid pink; border-radius: 10px; padding: 0px">
-	$(iframe(href; style=Dict("min-height"=> "60vh")))
-</div>
-	""")
-end
-
-# ╔═╡ 9b12c862-3604-4046-8d68-89dd2d198883
-@skip_as_script web_preview()
 
 # ╔═╡ a24bf899-87b0-4a2e-a6d4-30ac2aad4820
 md"""
@@ -243,7 +222,8 @@ end
 
 # ╔═╡ 3e93e57c-3660-416f-9874-d43abf99e60e
 INSTRUCTORS = [
-	(name = "Unknown", url = "https://github.com/unnamedunknownusername"),
+	(name = "Person 1", url = ""),
+	(name = "Person 2", url = "")
 ] |> instructors
 
 # ╔═╡ d78c58e5-3ecb-45ee-972e-20fc90ece3cc
@@ -266,6 +246,16 @@ function sidebar_pages(pages)
 		sidebar_page(; page...)
 	end
 	HTML(join(vec, "\n"))
+end
+
+# ╔═╡ 4489fbec-39b9-454f-ad17-3a1101d335ce
+md"""
+# Title headers inside notebooks
+"""
+
+# ╔═╡ 8eac52e6-6a5e-4519-9b4c-80aadbf27573
+function flatten_path(input::String)
+	join(input |> splitpath, "_")
 end
 
 # ╔═╡ 444502c9-33b5-4bb2-9a8d-a8d8e1adb632
@@ -295,8 +285,7 @@ function sidebar_code(book_model)
     <br>
     $(map(enumerate(book_model)) do (chapter_number, chap)
 		@htl("""
-		<div class="course-section">$(chap.title)</div>
-
+		<div class="course-section">Module $(chapter_number): $(chap.title)</div>
 		
 		$(map(enumerate(chap.contents)) do (section_number, section)
 
@@ -320,16 +309,6 @@ end
 
 # ╔═╡ 544518ea-d36d-4e80-855e-93895a8cc35d
 sidebar = sidebar_code(book_model)
-
-# ╔═╡ 4489fbec-39b9-454f-ad17-3a1101d335ce
-md"""
-# Title headers inside notebooks
-"""
-
-# ╔═╡ 8eac52e6-6a5e-4519-9b4c-80aadbf27573
-function flatten_path(input::String)
-	join(input |> splitpath, "_")
-end
 
 # ╔═╡ 32540d48-becf-482a-990c-4cd4d13d93f3
 function output_notebook_relpath(input::String)
@@ -504,6 +483,13 @@ begin
 	cd(current_dir)
 end
 
+# ╔═╡ a965eb6b-8c70-4986-a7b1-99c820c45716
+@skip_as_script @use_task([franklin_page_dir, file_server_port]) do
+
+	run(`$(Deno_jll.deno()) run --allow-net --allow-read https://deno.land/std@0.115.0/http/file_server.ts $(franklin_page_dir) --cors --port $(file_server_port)`)
+
+end
+
 # ╔═╡ 5c69b7bd-6b18-496f-bcd5-3251a5eb0dd8
 franklin_pages = @chain begin
 	franklin_page_dir
@@ -512,33 +498,6 @@ franklin_pages = @chain begin
 	filter(x -> basename(x) != "css", _)
 	[_; franklin_page_dir]
 end
-
-# ╔═╡ 35d20fb6-be54-4d6c-b6aa-5bc2529dafea
-function add_sidebar(page_dir)
-	page_name = basename(page_dir)
-	rel_page_dir = page_name == "__site" ? "." : joinpath("..", page_name)
-	index_page = joinpath(rel_page_dir, "main.html")
-	new_page_dir = page_dir # joinpath(output_dir, page_name)
-	isdir(new_page_dir) || mkpath(new_page_dir)
-
-	
-	@chain index_page begin
-		iframe
-		html_page(@htl("""
-		$(notebook_index_styles)
-
-		$(_)"""), SLASH_PREPATH)
-		string
-		"<!doctype html>\n" * _
-		write(joinpath(new_page_dir, "index.html")	, _)
-	end
-end
-
-# ╔═╡ d276b28e-a379-4804-ad25-f7d396b4ffb6
-for page_dir in franklin_pages
-	mv(joinpath(page_dir, "index.html"), joinpath(page_dir, "main.html"), force=true)
-	add_sidebar(page_dir)
-end; FRANKLIN_DONE = 1
 
 # ╔═╡ 77617779-76f0-4dec-aeea-cda321c71c9e
 md"""
@@ -569,56 +528,19 @@ iframe(src::AbstractString; style=nothing) = @htl("""
 <iframe width="100%" height="100%" src=$(src) style=$(style) class="plutopage" frameborder="0" allow="accelerometer; ambient-light-sensor; autoplay; battery; camera; display-capture; document-domain; encrypted-media; execution-while-not-rendered; execution-while-out-of-viewport; fullscreen; geolocation; gyroscope; layout-animations; legacy-image-formats; magnetometer; microphone; midi; navigation-override; oversized-images; payment; picture-in-picture; publickey-credentials-get; sync-xhr; usb; wake-lock; screen-wake-lock; vr; web-share; xr-spatial-tracking" allowfullscreen></iframe>
 """)
 
-# ╔═╡ 669ca7b1-9433-4391-b849-2f1cc7f4aa49
-function html_page(content, root_dir::String=".")
+# ╔═╡ 140990ab-0a8c-4000-b17d-30e2f33dfd5f
+web_preview(args...) = let
+	href = file_server_address(args...)
 	@htl("""
-	<html lang="en">
-	
-	<head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	    $(index_styles(root_dir))
-	    <link rel="icon" href="$(root_dir)/assets/favicon.png">
-	
-	    <title>$TITLE</title>
-	</head>
-	
-	<body>
-	    $(sidebar)
-	    <div class="content container">
-	
-	        <!-- Content appended here -->
-	        <div class="franklin-content">
-				$(content)
-	
-	        </div><!-- CONTENT ENDS HERE -->
-	
-	    </div> <!-- div: content container -->
-	
-	    $(index_footer)
-	</body>
-	
-	</html>
+	<div style='font-family: system-ui; margin: .5em;'>Showing preview of <a href=$(href) target="_blank">$href</a></div>
+	<div style="border: 10px solid pink; border-radius: 10px; padding: 0px">
+	$(iframe(href; style=Dict("min-height"=> "60vh")))
+</div>
 	""")
-	
 end
 
-# ╔═╡ 1780b6d1-5e53-48e0-8675-f78645e7c576
-function notebook_html_page(section)
-	new_jl_name = flatten_path(section.notebook_path)
-	new_jl_relpath = "notebooks/$(new_jl_name)"
-	new_html_relpath = without_pluto_file_extension(new_jl_relpath) * ".html"
-	
-	html_page(
-		@htl("""
-		$(notebook_index_styles)
-	
-		$(iframe("../$(new_html_relpath)"))
-		"""),
-		".."
-	)
-end
+# ╔═╡ 9b12c862-3604-4046-8d68-89dd2d198883
+@skip_as_script web_preview()
 
 # ╔═╡ e6e791d7-0f29-404a-8bdf-0c5f25d48da7
 index_styles(root_dir=".") = @htl("""
@@ -667,6 +589,41 @@ index_footer = "" #= @htl("""
     </script>
 	""") =#;
 
+# ╔═╡ 669ca7b1-9433-4391-b849-2f1cc7f4aa49
+function html_page(content, root_dir::String=".")
+	@htl("""
+	<html lang="en">
+	
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	    $(index_styles(root_dir))
+	    <link rel="icon" href="$(root_dir)/assets/favicon.png">
+	
+	    <title>$TITLE</title>
+	</head>
+	
+	<body>
+	    $(sidebar)
+	    <div class="content container">
+	
+	        <!-- Content appended here -->
+	        <div class="franklin-content">
+				$(content)
+	
+	        </div><!-- CONTENT ENDS HERE -->
+	
+	    </div> <!-- div: content container -->
+	
+	    $(index_footer)
+	</body>
+	
+	</html>
+	""")
+	
+end
+
 # ╔═╡ 29a3e3f4-1c7a-44e4-89c2-ce12d31f4fd7
 notebook_index_styles = @htl("""
 <style>
@@ -697,6 +654,49 @@ notebook_index_styles = @htl("""
 }
 </style>
 """);
+
+# ╔═╡ 35d20fb6-be54-4d6c-b6aa-5bc2529dafea
+function add_sidebar(page_dir)
+	page_name = basename(page_dir)
+	rel_page_dir = page_name == "__site" ? "." : joinpath("..", page_name)
+	index_page = joinpath(rel_page_dir, "main.html")
+	new_page_dir = page_dir # joinpath(output_dir, page_name)
+	isdir(new_page_dir) || mkpath(new_page_dir)
+
+	
+	@chain index_page begin
+		iframe
+		html_page(@htl("""
+		$(notebook_index_styles)
+
+		$(_)"""), SLASH_PREPATH)
+		string
+		"<!doctype html>\n" * _
+		write(joinpath(new_page_dir, "index.html")	, _)
+	end
+end
+
+# ╔═╡ d276b28e-a379-4804-ad25-f7d396b4ffb6
+for page_dir in franklin_pages
+	mv(joinpath(page_dir, "index.html"), joinpath(page_dir, "main.html"), force=true)
+	add_sidebar(page_dir)
+end; FRANKLIN_DONE = 1
+
+# ╔═╡ 1780b6d1-5e53-48e0-8675-f78645e7c576
+function notebook_html_page(section)
+	new_jl_name = flatten_path(section.notebook_path)
+	new_jl_relpath = "notebooks/$(new_jl_name)"
+	new_html_relpath = without_pluto_file_extension(new_jl_relpath) * ".html"
+	
+	html_page(
+		@htl("""
+		$(notebook_index_styles)
+	
+		$(iframe("../$(new_html_relpath)"))
+		"""),
+		".."
+	)
+end
 
 # ╔═╡ 4d78b60b-7311-4735-892b-1719729611d7
 md"""
