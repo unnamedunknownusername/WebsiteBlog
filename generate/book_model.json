@@ -28,6 +28,13 @@
 [
 
 {
+"name": "My Rules Of Good Code",
+"notebook_path": "notebooks/misc/TenantsOfGoodCode.jl",
+"video_id": "",
+"preview_image_url": ""
+},
+
+{
 "name": "Why I Love Pluto",
 "notebook_path": "notebooks/misc/WhyILovePluto.jl",
 "video_id": "",
