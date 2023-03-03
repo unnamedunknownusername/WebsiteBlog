@@ -8,52 +8,105 @@ using InteractiveUtils
 begin 
 	using PlutoUI
 	using PlutoTeachingTools
+	using HypertextLiteral
 end
 
-# ╔═╡ bdacad08-a9b1-11ec-1013-45393b4e19c9
-# hideall
-title = "Insert Title Here";
-
 # ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
-"""
-+++
-title = "$title"
-+++
-""" |> Base.Text
+frontmatter = (
+	title = "Tim Holy Traits",
+	description = "A simple description of the THTT patttern in Julia",
+	layout = "layout.jlhtml",
+		tags = ["Julia", "Programming", "Language","Pluto"],
+);
 
-# ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
+# ╔═╡ bdacad08-a9b1-11ec-1013-45393b4e19c9
 md"""
-# $title
+# $(frontmatter.title)
 """
 
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
 TableOfContents()
 
 # ╔═╡ e1386345-4493-4467-b634-8da57532fb11
-
+md"""
+# The General Idea
+"""
 
 # ╔═╡ 6752f134-9f36-4646-a914-a916f757719b
-
+md"""
+In programming languaes one often has to somehow specify the behaiour ofr objects/things, e.g. in most Object oriedntated languages we could create a dog class Interfaces are a 
+"""
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
-
+md"""
+# Implementing It
+"""
 
 # ╔═╡ a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+md"""
+asd[^THTT] asd
+"""
 
+# ╔═╡ cd2970bd-6061-488c-90e0-b254dcb4a81b
+md"""
+# Appendix
+"""
+
+# ╔═╡ 3b90bb4e-67a5-4e91-8c76-e597357bc48d
+md"""
+This section can be skipped if in a 
+"""
+
+# ╔═╡ 7b1a94a1-61e7-490f-b7f8-9ce2f5627a79
+md"""
+## References
+"""
+
+# ╔═╡ 3f1dfc85-8379-40b2-bbb2-834f7356fb32
+md"""
+[^THTT]: https://www.ahsmart.com/pub/holy-traits-design-patterns-and-best-practice-book/
+"""
 
 # ╔═╡ f333aa56-2cbc-4caf-8fde-3515bbb2d977
 md"""
-# Import Packages
+## Import Packages
 """
+
+# ╔═╡ 3e682611-c885-4eb2-b25f-d66a89d19b32
+md"""
+## Local Packages/Modules
+"""
+
+# ╔═╡ 61f7d41e-11ee-4caf-a449-761a52adb1e9
+md"""
+## Formatting\Modifcations To Look and Feel
+"""
+
+# ╔═╡ 95002b5d-d457-4822-b051-b7d3f3346675
+PlutoTeachingTools.BottomFootnotesNumbered()
+
+# ╔═╡ f7180788-a812-41b1-aa69-f7da25e21385
+#PlutoTeachingTools.InlineFootnotesNumbered()
+
+# ╔═╡ a3cb6606-9a32-44d5-b41d-41667ac016fe
+PlutoTeachingTools.InlineFootnotesStyleSuperscript()
+
+# ╔═╡ cf1e3ecb-dfc5-4d24-846c-128053b2e8af
+InlineFootnotesNumbered2()
+
+# ╔═╡ 52bb7172-f288-4072-9446-4c038901da69
+#InlineFootnotesNumbered0()
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
+HypertextLiteral = "ac1192a8-f4b3-4bfe-ba22-af5b92cd3ab2"
 PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-PlutoTeachingTools = "~0.2.5"
+HypertextLiteral = "~0.9.4"
+PlutoTeachingTools = "~0.2.6"
 PlutoUI = "~0.7.50"
 """
 
@@ -63,7 +116,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.1"
 manifest_format = "2.0"
-project_hash = "69f995e0dc6a1c35a46792be048dc8abd510ce38"
+project_hash = "d3a0126ab005e9fb67731a36a99b12bbac071747"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -272,9 +325,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "ea3e4ac2e49e3438815f8946fa7673b658e35bdb"
+git-tree-sha1 = "eb11c2e0586fdf48d5d262ba6e29e438ccc512d9"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.5"
+version = "0.2.6"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -394,15 +447,25 @@ version = "17.4.0+0"
 """
 
 # ╔═╡ Cell order:
-# ╠═bdacad08-a9b1-11ec-1013-45393b4e19c9
-# ╠═2d438832-40cd-45bf-9305-46f59a3fca33
-# ╠═4b62caa1-90a7-4451-a313-eb93badf618d
+# ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
+# ╟─2d438832-40cd-45bf-9305-46f59a3fca33
 # ╠═7e0348f6-2284-475d-a101-c6842b05db4c
-# ╠═e1386345-4493-4467-b634-8da57532fb11
+# ╟─e1386345-4493-4467-b634-8da57532fb11
 # ╠═6752f134-9f36-4646-a914-a916f757719b
-# ╠═9f1effe5-f766-4f2e-aa4b-3967261fd84b
+# ╟─9f1effe5-f766-4f2e-aa4b-3967261fd84b
 # ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╟─cd2970bd-6061-488c-90e0-b254dcb4a81b
+# ╠═3b90bb4e-67a5-4e91-8c76-e597357bc48d
+# ╠═7b1a94a1-61e7-490f-b7f8-9ce2f5627a79
+# ╠═3f1dfc85-8379-40b2-bbb2-834f7356fb32
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
+# ╟─3e682611-c885-4eb2-b25f-d66a89d19b32
+# ╟─61f7d41e-11ee-4caf-a449-761a52adb1e9
+# ╠═95002b5d-d457-4822-b051-b7d3f3346675
+# ╠═f7180788-a812-41b1-aa69-f7da25e21385
+# ╠═a3cb6606-9a32-44d5-b41d-41667ac016fe
+# ╠═cf1e3ecb-dfc5-4d24-846c-128053b2e8af
+# ╠═52bb7172-f288-4072-9446-4c038901da69
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
