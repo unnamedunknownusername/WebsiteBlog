@@ -20,8 +20,87 @@ frontmatter = (
 # ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
 TableOfContents()
 
-# ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
+# ╔═╡ a9774883-e87d-435c-96df-352086d62037
+md"""
+I have a dream that one day all code will be noteboooks and everyone from everywhere will understand what the code is doing - or at the very least I will know what I was doing 5 years from now after I have forgotten why I wrote this function in the first place
+"""
 
+# ╔═╡ 39f8fd05-15a5-4dc5-8773-60cbe08a8ff2
+md"""
+# Introduction
+"""
+
+# ╔═╡ 6aff158c-c900-4933-896d-3aac00cc585a
+
+
+# ╔═╡ ded8db77-e0d7-4458-b635-9d94b99b9ba9
+
+
+# ╔═╡ 347f88c6-6989-4fe2-bbb1-b2d2d051fe16
+
+
+# ╔═╡ bce13da5-3d28-4215-982a-dc3d1f923899
+
+
+# ╔═╡ 0ca35537-9ff6-4606-9514-1243fd3a54c2
+
+
+# ╔═╡ 93b09c7a-3ee0-4bde-9729-56422139314c
+md"""
+# Notebooks/Files as Functions
+"""
+
+# ╔═╡ 6f38ee4e-27f2-4e86-857f-e52fe80d0234
+md"""
+in order to fully embrace this paradigm one must take the stance that files are not containers for many functions (at least at the base level). Instead they should only  deal with one function or idea. Notebooks by extension are just files after all, and thus all primitive/base-level files or notebooks should house one unit of code and its associated functionality (which as we shall see later, will include testing, function overload/same-name-methods, etc)
+"""
+
+# ╔═╡ 46d417c1-68c0-4929-9b86-01dda6762e22
+
+
+# ╔═╡ 8977763c-ce75-427c-a152-e3a40e6f7056
+md"""
+[Literae Programing](https://en.wikipedia.org/wiki/Literate_programming#:~:text=Literate%20programming.%20Literate%20programming%20is%20a%20programming%20paradigm,from%20which%20compilable%20source%20code%20can%20be%20generated.)
+"""
+
+# ╔═╡ cb897219-e8c5-432c-947e-941820f86481
+
+
+# ╔═╡ fe84d803-6883-42e6-92e4-e8fe277d6fde
+
+
+# ╔═╡ 28a70307-3993-4e0e-a784-3557e3361ad1
+
+
+# ╔═╡ ea72ff9c-a6e9-4f33-80fd-8d1d5dd4654c
+
+
+# ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
+md"""
+# PlutoUI as an example
+"""
+
+# ╔═╡ 294e4e12-d429-45e7-b070-7d3ddfc27103
+md"""
+now that [PlutoUI.jl](https://github.com/JuliaPluto/PlutoUI.jl) 
+"""
+
+# ╔═╡ 29a950c7-da06-40c4-ae23-b1255527bde5
+
+
+# ╔═╡ 88fbdfbc-1a5e-41eb-838a-eda29e168d22
+
+
+# ╔═╡ e7753152-42f9-488b-9e32-07ba72baf429
+
+
+# ╔═╡ 542f6587-c324-42b2-bbd2-ea26091109ad
+
+
+# ╔═╡ c578853e-938b-4fef-8072-ced21e8740bb
+md"""
+# Some other notes
+"""
 
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
 
@@ -36,11 +115,13 @@ TableOfContents()
 
 
 # ╔═╡ a3ca2950-4bc0-45ed-9652-24ed589e1dfd
-
+md"""
+# Appendix
+"""
 
 # ╔═╡ f333aa56-2cbc-4caf-8fde-3515bbb2d977
 md"""
-# Import Packages
+## Import Packages
 """
 
 # ╔═╡ 79a6c1e6-b22e-4674-ba0a-8862336864e3
@@ -48,6 +129,24 @@ begin
 	using PlutoUI
 	using PlutoTeachingTools
 end
+
+# ╔═╡ e4c34d74-51c5-4c08-ba85-636dfc91813e
+md"""
+## Formatting/Adjusutments To Look And Feel
+"""
+
+# ╔═╡ 5f6f51d7-6a95-4b10-b34a-cfb00a779944
+paragraphJustifiedStyling()=html"""
+<style>
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
+"""
+
+# ╔═╡ 1c5a4646-937c-42cd-bdb5-efc17eac9227
+paragraphJustifiedStyling()
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -66,7 +165,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.1"
 manifest_format = "2.0"
-project_hash = "69f995e0dc6a1c35a46792be048dc8abd510ce38"
+project_hash = "d14bdb437607ceff67f6e42cf6036119a15aae48"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -400,14 +499,38 @@ version = "17.4.0+0"
 # ╟─f5450eab-0f9f-4b7f-9b80-992d3c553ba9
 # ╟─d3c6dd3c-8f78-4c5d-b22a-0fbeb93d02b4
 # ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
-# ╠═2d438832-40cd-45bf-9305-46f59a3fca33
+# ╟─2d438832-40cd-45bf-9305-46f59a3fca33
+# ╟─a9774883-e87d-435c-96df-352086d62037
+# ╟─39f8fd05-15a5-4dc5-8773-60cbe08a8ff2
+# ╠═6aff158c-c900-4933-896d-3aac00cc585a
+# ╠═ded8db77-e0d7-4458-b635-9d94b99b9ba9
+# ╠═347f88c6-6989-4fe2-bbb1-b2d2d051fe16
+# ╠═bce13da5-3d28-4215-982a-dc3d1f923899
+# ╠═0ca35537-9ff6-4606-9514-1243fd3a54c2
+# ╟─93b09c7a-3ee0-4bde-9729-56422139314c
+# ╟─6f38ee4e-27f2-4e86-857f-e52fe80d0234
+# ╠═46d417c1-68c0-4929-9b86-01dda6762e22
+# ╠═8977763c-ce75-427c-a152-e3a40e6f7056
+# ╠═cb897219-e8c5-432c-947e-941820f86481
+# ╠═fe84d803-6883-42e6-92e4-e8fe277d6fde
+# ╠═28a70307-3993-4e0e-a784-3557e3361ad1
+# ╠═ea72ff9c-a6e9-4f33-80fd-8d1d5dd4654c
 # ╟─4b62caa1-90a7-4451-a313-eb93badf618d
+# ╠═294e4e12-d429-45e7-b070-7d3ddfc27103
+# ╠═29a950c7-da06-40c4-ae23-b1255527bde5
+# ╠═88fbdfbc-1a5e-41eb-838a-eda29e168d22
+# ╠═e7753152-42f9-488b-9e32-07ba72baf429
+# ╠═542f6587-c324-42b2-bbd2-ea26091109ad
+# ╟─c578853e-938b-4fef-8072-ced21e8740bb
 # ╠═7e0348f6-2284-475d-a101-c6842b05db4c
 # ╠═e1386345-4493-4467-b634-8da57532fb11
 # ╠═6752f134-9f36-4646-a914-a916f757719b
 # ╠═9f1effe5-f766-4f2e-aa4b-3967261fd84b
-# ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╟─a3ca2950-4bc0-45ed-9652-24ed589e1dfd
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
+# ╟─e4c34d74-51c5-4c08-ba85-636dfc91813e
+# ╟─5f6f51d7-6a95-4b10-b34a-cfb00a779944
+# ╠═1c5a4646-937c-42cd-bdb5-efc17eac9227
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
