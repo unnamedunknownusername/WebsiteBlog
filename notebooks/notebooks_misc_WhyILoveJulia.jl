@@ -4,21 +4,24 @@
 using Markdown
 using InteractiveUtils
 
+# ╔═╡ 8666ef54-4b89-4772-bbbc-8ff5e60b59cd
+md"""
+# $(frontmatter.title)
+"""
+
 # ╔═╡ bdacad08-a9b1-11ec-1013-45393b4e19c9
-# hideall
-title = "Insert Title Here";
+frontmatter = (
+	title = "Why I Love Julia",
+	description = "A simple notebook demonstrating the Julia syntax essentials",
+	layout = "layout.jlhtml",
+		tags = ["Julia", "Programming", "Language","Pluto"],
+);
 
 # ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
-"""
-+++
-title = "$title"
-+++
-""" |> Base.Text
+
 
 # ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
-md"""
-# $title
-"""
+
 
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
 TableOfContents()
@@ -53,7 +56,7 @@ PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-PlutoTeachingTools = "~0.2.5"
+PlutoTeachingTools = "~0.2.6"
 PlutoUI = "~0.7.50"
 """
 
@@ -272,9 +275,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "ea3e4ac2e49e3438815f8946fa7673b658e35bdb"
+git-tree-sha1 = "eb11c2e0586fdf48d5d262ba6e29e438ccc512d9"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.5"
+version = "0.2.6"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -395,6 +398,7 @@ version = "17.4.0+0"
 
 # ╔═╡ Cell order:
 # ╟─f5450eab-0f9f-4b7f-9b80-992d3c553ba9
+# ╟─8666ef54-4b89-4772-bbbc-8ff5e60b59cd
 # ╠═bdacad08-a9b1-11ec-1013-45393b4e19c9
 # ╠═2d438832-40cd-45bf-9305-46f59a3fca33
 # ╠═4b62caa1-90a7-4451-a313-eb93badf618d
