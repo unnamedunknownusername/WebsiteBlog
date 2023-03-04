@@ -36,18 +36,57 @@ In programming languaes one often has to somehow specify the behaiour ofr object
 
 # ╔═╡ 021ca64f-6dbd-4d7b-a8fa-cfd810cf4a18
 md"""
-Another such way of pulling together similar functionality is through interfaces. The idea behind interfaces is, broadly speaking, to specify empty "stuff" (ethods or data) and later when another class "implements" (a la inherits) the aforementioned interface it has to provide/populate/"fill-out" thes empty parts
+Another such way of pulling together similar functionality is through interfaces. The idea behind interfaces is, broadly speaking, to specify empty "stuff" (ethods or data) and later when another class "implements" (a la inherits) the aforementioned interface it has to provide/populate/"fill-in" thes empty parts
 
+"""
+
+# ╔═╡ ee9f74bc-5c29-4d09-befd-f6e3f98fae5f
+md"""
+as an abstract example we could create an interface with an empty method
+```
+Interface MyAnimalInterface
+	Speak(){
+
+	}
+```
+
+we could create a dog class and if they implment the interface they would then need to "fill-in" the 
+
+```
+MyDogClass implements MyAnimalInterface
+	Speak(){
+		print ("woof woof")
+	}
+```
+
+usually if we leave it empty and don't "fill-in" the interface data we would get an error
+```
+MyDogClass implements MyAnimalInterface
+	Speak(){
+	
+	}
+->THIS WOULD ERROR
+```
+
+
+
+"""
+
+# ╔═╡ d4e4ebdb-9f82-4c32-9a0d-d2671c5ed211
+md"""
+the beauty of this, is that we could create something similar (say a cat class) and since it is also an animal we would also implement the inteface and fill it in with its **own** functionality
+```
+MyCatClass implements MyAnimalInterface
+	Speak(){
+		print ("Meow meow")
+	}
+```
+Both are animals both animals speak but they speak in their own way. extending this further we have abstracted away an attribute that all animals have in the MyAnimalInterface AllAnimals speak/make sounds of some sort.
 """
 
 # ╔═╡ e66d670a-eba5-4b5e-a199-e52b7873f783
 md"""
-as an abstract example we could creat an interface
-```
-Interface MyInterface
-	myInterfaceMethod()
-```
-for example in C# we could have 
+more concretely in C# we could have 
 
 ```cs
 public interface IVehicle
@@ -94,7 +133,7 @@ md"""
 
 
 
-Julia is not strictly an Object Orientated programming language in that it does not have classes which house data + methods. instead Julia decouples the two and users can 
+Julia is not strictly an Object Orientated programming language in that it does not have classes which house data + methods. instead Julia decouples the two. Uusers can define `types` for data and would act similar to class properties) and`functions` and their associated method table which would act similar to class methods
 """
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
@@ -522,10 +561,12 @@ version = "17.4.0+0"
 # ╟─e1386345-4493-4467-b634-8da57532fb11
 # ╟─aa52e7d6-b987-4557-9013-749fe3d9ee06
 # ╟─021ca64f-6dbd-4d7b-a8fa-cfd810cf4a18
+# ╟─ee9f74bc-5c29-4d09-befd-f6e3f98fae5f
+# ╟─d4e4ebdb-9f82-4c32-9a0d-d2671c5ed211
 # ╟─e66d670a-eba5-4b5e-a199-e52b7873f783
 # ╟─8a7ac42c-40aa-46f2-b76a-c65fcca83cb4
 # ╟─01f35d03-7a6e-4a16-9b62-285b8808aa12
-# ╠═6752f134-9f36-4646-a914-a916f757719b
+# ╟─6752f134-9f36-4646-a914-a916f757719b
 # ╟─9f1effe5-f766-4f2e-aa4b-3967261fd84b
 # ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
 # ╟─cd2970bd-6061-488c-90e0-b254dcb4a81b
