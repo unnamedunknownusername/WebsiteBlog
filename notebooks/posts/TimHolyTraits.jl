@@ -27,14 +27,81 @@ md"""
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
 TableOfContents()
 
+# ╔═╡ 5d92ce0d-5d4e-47b7-a650-c1e86caadd4f
+PlutoTeachingTools.blockquote("Multiple dispatch gives you the wonderful gift of flexibility and lets you uncover things you first thought were not possible")
+
 # ╔═╡ e1386345-4493-4467-b634-8da57532fb11
 md"""
 # The General Idea
 """
 
+# ╔═╡ aa52e7d6-b987-4557-9013-749fe3d9ee06
+md"""
+In programming languaes one often has to somehow specify the behaiour ofr objects/things, e.g. in most object orientated languages we use polymorphism through classes and abstract calsses to create instances of parent and child objects so as to group attributes or inherit common methods. 
+
+"""
+
+# ╔═╡ 021ca64f-6dbd-4d7b-a8fa-cfd810cf4a18
+md"""
+Another such way of pulling together similar functionality is through interfaces. The idea behind interfaces is, broadly speaking, to specify empty "stuff" (ethods or data) and later when another class "implements" (a la inherits) the aforementioned interface it has to provide/populate/"fill-out" thes empty parts
+
+"""
+
+# ╔═╡ e66d670a-eba5-4b5e-a199-e52b7873f783
+md"""
+as an abstract example we could creat an interface
+```
+Interface MyInterface
+	myInterfaceMethod()
+```
+for example in C# we could have 
+
+```cs
+public interface IVehicle
+{
+  public int NumberOfWheels {get; set;}
+
+}
+```
+
+and have a class `Car` that implements it. We have to now provide a value for the property on the interface.
+but what this means is that 
+```cs
+public class Car : IVehicle
+{
+  public int NumberOfWheels {get;}= 4 
+
+}
+```
+
+```cs
+public class Boat : IVehicle
+{
+  public int NumberOfWheels {get;}= 0 
+
+}
+```
+"""
+
+# ╔═╡ 8a7ac42c-40aa-46f2-b76a-c65fcca83cb4
+md"""
+One can sort of look at interfaces as a way to specify/group traits of a "thing" together. And then any other "thing" which has those traits can inherit from it and must **(I repeat MUST)** fill in there particular details. In the above exmples all vehicles have the trait a number of wheels. Fors cars that number is 4 and for boats that number is zero, etc
+"""
+
+# ╔═╡ 01f35d03-7a6e-4a16-9b62-285b8808aa12
+md"""
+The specific details are not really that important and there may be a little more nuance in reality but for this article the only thing you really have to understand is that in most languages there is a specific construct called an interface to specify this attrribute like behaviour.
+"""
+
 # ╔═╡ 6752f134-9f36-4646-a914-a916f757719b
 md"""
-In programming languaes one often has to somehow specify the behaiour ofr objects/things, e.g. in most Object oriedntated languages we could create a dog class Interfaces are a 
+
+
+
+
+
+
+Julia is not strictly an Object Orientated programming language in that it does not have classes which house data + methods. instead Julia decouples the two and users can 
 """
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
@@ -106,7 +173,7 @@ PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
 HypertextLiteral = "~0.9.4"
-PlutoTeachingTools = "~0.2.6"
+PlutoTeachingTools = "~0.2.8"
 PlutoUI = "~0.7.50"
 """
 
@@ -302,9 +369,9 @@ version = "1.4.1"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6f4fbcd1ad45905a5dee3f4256fabb49aa2110c6"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.7"
+version = "2.5.8"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -325,9 +392,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "eb11c2e0586fdf48d5d262ba6e29e438ccc512d9"
+git-tree-sha1 = "b970826468465da71f839cdacc403e99842c18ea"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.6"
+version = "0.2.8"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -449,13 +516,19 @@ version = "17.4.0+0"
 # ╔═╡ Cell order:
 # ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
 # ╟─2d438832-40cd-45bf-9305-46f59a3fca33
-# ╠═7e0348f6-2284-475d-a101-c6842b05db4c
+# ╟─7e0348f6-2284-475d-a101-c6842b05db4c
+# ╟─5d92ce0d-5d4e-47b7-a650-c1e86caadd4f
 # ╟─e1386345-4493-4467-b634-8da57532fb11
+# ╟─aa52e7d6-b987-4557-9013-749fe3d9ee06
+# ╟─021ca64f-6dbd-4d7b-a8fa-cfd810cf4a18
+# ╟─e66d670a-eba5-4b5e-a199-e52b7873f783
+# ╟─8a7ac42c-40aa-46f2-b76a-c65fcca83cb4
+# ╟─01f35d03-7a6e-4a16-9b62-285b8808aa12
 # ╠═6752f134-9f36-4646-a914-a916f757719b
 # ╟─9f1effe5-f766-4f2e-aa4b-3967261fd84b
 # ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
 # ╟─cd2970bd-6061-488c-90e0-b254dcb4a81b
-# ╠═3b90bb4e-67a5-4e91-8c76-e597357bc48d
+# ╟─3b90bb4e-67a5-4e91-8c76-e597357bc48d
 # ╠═7b1a94a1-61e7-490f-b7f8-9ce2f5627a79
 # ╠═3f1dfc85-8379-40b2-bbb2-834f7356fb32
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
