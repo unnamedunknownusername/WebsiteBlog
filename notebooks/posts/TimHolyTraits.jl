@@ -170,7 +170,7 @@ md"""
 
 # ╔═╡ 3f1dfc85-8379-40b2-bbb2-834f7356fb32
 md"""
-[^THTT]: https://www.ahsmart.com/pub/holy-traits-design-patterns-and-best-practice-book/
+[^THTT]: [https://www.ahsmart.com/pub/holy-traits-design-patterns-and-best-practice-book/](https://www.ahsmart.com/pub/holy-traits-design-patterns-and-best-practice-book/)
 """
 
 # ╔═╡ f333aa56-2cbc-4caf-8fde-3515bbb2d977
@@ -183,10 +183,19 @@ md"""
 ## Local Packages/Modules
 """
 
+# ╔═╡ 8764244c-c7c4-457c-bf27-655154076b96
+FormattingModule = PlutoTeachingTools.@ingredients("../FormattingModule.jl")
+
+# ╔═╡ 8cf2639e-77c0-49fe-93a2-4b79739301c8
+
+
 # ╔═╡ 61f7d41e-11ee-4caf-a449-761a52adb1e9
 md"""
 ## Formatting\Modifcations To Look and Feel
 """
+
+# ╔═╡ 02e1c6df-9b7d-48c6-a635-54871d4bcb69
+FormattingModule.paragraphJustifiedStyling()
 
 # ╔═╡ 95002b5d-d457-4822-b051-b7d3f3346675
 PlutoTeachingTools.BottomFootnotesNumbered()
@@ -567,15 +576,18 @@ version = "17.4.0+0"
 # ╟─01f35d03-7a6e-4a16-9b62-285b8808aa12
 # ╟─6752f134-9f36-4646-a914-a916f757719b
 # ╟─9f1effe5-f766-4f2e-aa4b-3967261fd84b
-# ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╟─a3ca2950-4bc0-45ed-9652-24ed589e1dfd
 # ╟─cd2970bd-6061-488c-90e0-b254dcb4a81b
 # ╟─3b90bb4e-67a5-4e91-8c76-e597357bc48d
-# ╠═7b1a94a1-61e7-490f-b7f8-9ce2f5627a79
-# ╠═3f1dfc85-8379-40b2-bbb2-834f7356fb32
+# ╟─7b1a94a1-61e7-490f-b7f8-9ce2f5627a79
+# ╟─3f1dfc85-8379-40b2-bbb2-834f7356fb32
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
 # ╟─3e682611-c885-4eb2-b25f-d66a89d19b32
+# ╠═8764244c-c7c4-457c-bf27-655154076b96
+# ╠═8cf2639e-77c0-49fe-93a2-4b79739301c8
 # ╟─61f7d41e-11ee-4caf-a449-761a52adb1e9
+# ╠═02e1c6df-9b7d-48c6-a635-54871d4bcb69
 # ╠═95002b5d-d457-4822-b051-b7d3f3346675
 # ╠═f7180788-a812-41b1-aa69-f7da25e21385
 # ╠═a3cb6606-9a32-44d5-b41d-41667ac016fe
