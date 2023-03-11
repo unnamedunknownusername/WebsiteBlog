@@ -10,33 +10,53 @@ begin
 	using PlutoTeachingTools
 end
 
-# ╔═╡ bdacad08-a9b1-11ec-1013-45393b4e19c9
-# hideall
-title = "Insert Title Here";
-
 # ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
-"""
-+++
-title = "$title"
-+++
-""" |> Base.Text
+frontmatter = (
+title = "My (Opinionated) Tenants Of Good Code",
+description = "Some thoughts on what makes code good based on my experiance and biases",
+layout = "layout.jlhtml",
+tags = [
+	"Julia",
+	"Programming",
+	"Language",
+	"Pluto",
+	"Best",
+	"Coding",
+	"Code",
+	"Practises"
+],
+);
 
-# ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
+# ╔═╡ bdacad08-a9b1-11ec-1013-45393b4e19c9
 md"""
-# $title
+# $(frontmatter.title)
 """
 
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
 TableOfContents()
 
 # ╔═╡ e1386345-4493-4467-b634-8da57532fb11
+PlutoTeachingTools.blockquote("I think this way is better, maybe one day I will come up with a reason why")
 
+# ╔═╡ 27d68d40-a628-4e0b-a99c-6fdb59355abe
+md"""
+# The Rules
+"""
 
 # ╔═╡ 6752f134-9f36-4646-a914-a916f757719b
+md"""
+## Always Named Arguments
+"""
 
+# ╔═╡ d588d42d-6d20-4d04-8130-41e45414089a
+md"""
+## Descriptive Varibale Names Are Better
+"""
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
-
+md"""
+## No Folder / Flat Structure Over Folders
+"""
 
 # ╔═╡ a3ca2950-4bc0-45ed-9652-24ed589e1dfd
 
@@ -53,7 +73,7 @@ PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-PlutoTeachingTools = "~0.2.5"
+PlutoTeachingTools = "~0.2.8"
 PlutoUI = "~0.7.50"
 """
 
@@ -83,9 +103,9 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[deps.CodeTracking]]
 deps = ["InteractiveUtils", "UUIDs"]
-git-tree-sha1 = "4f619d394ac521dc59cb80a2cd8f78578e483a9d"
+git-tree-sha1 = "d57c99cc7e637165c81b30eb268eabe156a45c49"
 uuid = "da1fd8a2-8d9e-5ec2-8556-3022fb5608a2"
-version = "1.2.1"
+version = "1.2.2"
 
 [[deps.ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -249,9 +269,9 @@ version = "1.4.1"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6f4fbcd1ad45905a5dee3f4256fabb49aa2110c6"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.7"
+version = "2.5.8"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -272,9 +292,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "ea3e4ac2e49e3438815f8946fa7673b658e35bdb"
+git-tree-sha1 = "b970826468465da71f839cdacc403e99842c18ea"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.5"
+version = "0.2.8"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -394,13 +414,14 @@ version = "17.4.0+0"
 """
 
 # ╔═╡ Cell order:
-# ╠═bdacad08-a9b1-11ec-1013-45393b4e19c9
-# ╠═2d438832-40cd-45bf-9305-46f59a3fca33
-# ╠═4b62caa1-90a7-4451-a313-eb93badf618d
-# ╠═7e0348f6-2284-475d-a101-c6842b05db4c
-# ╠═e1386345-4493-4467-b634-8da57532fb11
-# ╠═6752f134-9f36-4646-a914-a916f757719b
-# ╠═9f1effe5-f766-4f2e-aa4b-3967261fd84b
+# ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
+# ╟─2d438832-40cd-45bf-9305-46f59a3fca33
+# ╟─7e0348f6-2284-475d-a101-c6842b05db4c
+# ╟─e1386345-4493-4467-b634-8da57532fb11
+# ╟─27d68d40-a628-4e0b-a99c-6fdb59355abe
+# ╟─6752f134-9f36-4646-a914-a916f757719b
+# ╟─d588d42d-6d20-4d04-8130-41e45414089a
+# ╟─9f1effe5-f766-4f2e-aa4b-3967261fd84b
 # ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
