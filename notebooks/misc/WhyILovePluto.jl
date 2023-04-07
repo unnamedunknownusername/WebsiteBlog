@@ -34,61 +34,96 @@ PlutoTeachingTools.blockquote("If only Jupyter notebooks weren't so state driven
 # ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
 
 
+# ╔═╡ 35de6a2f-6729-4af7-ba82-983572b5fe8c
+md"""
+# Reactivity
+"""
+
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
 md"""
-# Excel has its limitations
+## Excel and its limitations
 """
 
 # ╔═╡ 4768f2c0-76cd-4abb-955a-9f455ef2b0b8
+md"""
+Like most people 
 
+nowadays that is different and I mainly
+"""
 
 # ╔═╡ 450b5d2c-21b4-462c-ad45-8a5d9b13d0b9
+
+
+# ╔═╡ 0b6ee79e-be2d-4266-9a53-de8f711e7a51
 
 
 # ╔═╡ a9084011-7989-40e2-b674-c84dae14e2a8
 
 
-# ╔═╡ f9ea7af0-9360-4df6-9ef8-b76988105e7d
+# ╔═╡ de65a87d-8d62-47a2-a5aa-3ecb1e41b6f0
 md"""
-# The problem with Jupyter
+# Reproducibility
 """
-
-# ╔═╡ e1386345-4493-4467-b634-8da57532fb11
-md"""
-## Reproducibility
-"""
-
-# ╔═╡ 6176c6ed-1c0d-4f69-8d6f-108e825c5f29
-
-
-# ╔═╡ 3915ed80-4717-4c28-992e-6b9e910f06df
-
-
-# ╔═╡ a56219c0-8d9a-4f6c-8a69-b052153bef9a
-
 
 # ╔═╡ 6752f134-9f36-4646-a914-a916f757719b
 md"""
-### No hidden state or workspace 
+## No hidden state or workspace 
+"""
+
+# ╔═╡ 38c724d0-dde0-4f26-9850-e34f6b348e3a
+md"""
+### Jupyter Problem #2
 """
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
 
 
+# ╔═╡ de5529c0-a94d-40dc-bd33-c48a9cd8c5ff
+
+
+# ╔═╡ c2c374a3-41c8-4a9a-b8d2-70efc7b92201
+
+
+# ╔═╡ 5a430a2f-183a-44f8-896e-626fc32af632
+
+
 # ╔═╡ a3ca2950-4bc0-45ed-9652-24ed589e1dfd
 md"""
-### Package managment 
+## Package managment 
 """
+
+# ╔═╡ 4656419d-50c3-44a4-af41-5d9453d66d03
+md"""
+### Jupyter Problem #3
+"""
+
+# ╔═╡ 6be52376-0023-4ee5-be9b-787998a5e3b7
+
+
+# ╔═╡ dc0fc07c-8cc9-40dc-9919-b8d808f1ce26
+
+
+# ╔═╡ 891aeadc-8a6a-4776-8d39-296cfef3ad1c
+
 
 # ╔═╡ 23488951-afa9-46db-961c-b57753913aed
 
 
 # ╔═╡ 64599d86-b946-4211-a963-b4a6b7635101
 md"""
-### Flexibility - exposed `.html`, `.css`, and `.js`
+# Flexibility - exposed `.html`, `.css`, and `.js`
 """
 
-# ╔═╡ 4537313c-aed5-4657-932e-017d1c4b3ec9
+# ╔═╡ 788d35a1-5bcd-40e6-801e-da1a0f8629be
+
+
+# ╔═╡ 43a14226-f373-4dbc-a036-b34da5f4eace
+
+
+# ╔═╡ be458f4f-8d7f-4623-9364-e67695d3c461
+
+
+# ╔═╡ d6b48024-71cf-4b09-9b2c-b0c52b6f2105
 
 
 # ╔═╡ 9bea2bbe-e223-4f2a-83ff-fafce4547b7d
@@ -505,21 +540,30 @@ version = "17.4.0+0"
 # ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
 # ╟─e585127b-d136-4bc6-9757-f93e5000399e
 # ╠═4b62caa1-90a7-4451-a313-eb93badf618d
+# ╟─35de6a2f-6729-4af7-ba82-983572b5fe8c
 # ╟─7e0348f6-2284-475d-a101-c6842b05db4c
-# ╠═4768f2c0-76cd-4abb-955a-9f455ef2b0b8
+# ╟─4768f2c0-76cd-4abb-955a-9f455ef2b0b8
 # ╠═450b5d2c-21b4-462c-ad45-8a5d9b13d0b9
+# ╠═0b6ee79e-be2d-4266-9a53-de8f711e7a51
 # ╠═a9084011-7989-40e2-b674-c84dae14e2a8
-# ╟─f9ea7af0-9360-4df6-9ef8-b76988105e7d
-# ╟─e1386345-4493-4467-b634-8da57532fb11
-# ╠═6176c6ed-1c0d-4f69-8d6f-108e825c5f29
-# ╠═3915ed80-4717-4c28-992e-6b9e910f06df
-# ╠═a56219c0-8d9a-4f6c-8a69-b052153bef9a
+# ╟─de65a87d-8d62-47a2-a5aa-3ecb1e41b6f0
 # ╟─6752f134-9f36-4646-a914-a916f757719b
+# ╟─38c724d0-dde0-4f26-9850-e34f6b348e3a
 # ╠═9f1effe5-f766-4f2e-aa4b-3967261fd84b
+# ╠═de5529c0-a94d-40dc-bd33-c48a9cd8c5ff
+# ╠═c2c374a3-41c8-4a9a-b8d2-70efc7b92201
+# ╠═5a430a2f-183a-44f8-896e-626fc32af632
 # ╟─a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╟─4656419d-50c3-44a4-af41-5d9453d66d03
+# ╠═6be52376-0023-4ee5-be9b-787998a5e3b7
+# ╠═dc0fc07c-8cc9-40dc-9919-b8d808f1ce26
+# ╠═891aeadc-8a6a-4776-8d39-296cfef3ad1c
 # ╠═23488951-afa9-46db-961c-b57753913aed
-# ╠═64599d86-b946-4211-a963-b4a6b7635101
-# ╠═4537313c-aed5-4657-932e-017d1c4b3ec9
+# ╟─64599d86-b946-4211-a963-b4a6b7635101
+# ╠═788d35a1-5bcd-40e6-801e-da1a0f8629be
+# ╠═43a14226-f373-4dbc-a036-b34da5f4eace
+# ╠═be458f4f-8d7f-4623-9364-e67695d3c461
+# ╠═d6b48024-71cf-4b09-9b2c-b0c52b6f2105
 # ╟─9bea2bbe-e223-4f2a-83ff-fafce4547b7d
 # ╟─73de53db-b2ea-4bfe-b41e-63cb2c58b6d7
 # ╠═dafd77a0-fb1c-4bf8-9bf2-a38f1801b340
