@@ -8,6 +8,7 @@ using InteractiveUtils
 begin 
 	using PlutoUI
 	using PlutoTeachingTools
+	using HypertextLiteral
 end
 
 # ╔═╡ eb21e818-9e5e-42a0-838e-87a7323a4b1e
@@ -128,7 +129,105 @@ md"""
 """
 
 # ╔═╡ d6b48024-71cf-4b09-9b2c-b0c52b6f2105
+html"""
+<script src="https://cdn.jsdelivr.net/npm/d3@6.2.0/dist/d3.min.js"></script>
+"""
 
+# ╔═╡ c732167a-91a7-4bac-985a-f1fbc0cfced4
+html"""
+<script>
+const { default: confetti } = await import("https://esm.sh/canvas-confetti@1.4.0")
+</script>
+"""
+
+# ╔═╡ 80d689f3-a71c-4a74-a049-f6e56cf541f1
+# ╠═╡ disabled = true
+#=╠═╡
+html"""
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+"""
+  ╠═╡ =#
+
+# ╔═╡ c97152d8-69b2-4f30-ad42-33af82d7dce5
+
+
+# ╔═╡ 89835fa4-2861-4055-8c49-9a092e564d6f
+TODO(md"""
+get `mermaid.js` working here
+""")
+
+# ╔═╡ dc470e53-4a1a-4861-85e9-3c5d0cd3791d
+html"""
+
+<script type=module>
+
+const { default: mermaid } = await import( "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.min.js")
+
+</script>
+
+
+<pre class="mermaid">
+
+flowchart LR
+    A[Hard] -->|Text| B(Round)
+    B --> C{Decision}
+    C -->|One| D[Result 1]
+    C -->|Two| E[Result 2]
+
+</pre>
+
+  
+"""
+
+# ╔═╡ ae1f85f0-8e99-46cd-9355-efd6f0c3df20
+html"""
+<script type=module>
+
+const { default: mermaid } = await import( "https://cdn.jsdelivr.net/npm/mermaid@10.1.0/dist/mermaid.min.js")
+
+</script>
+"""
+
+# ╔═╡ ee83cd72-a8f1-4213-9acc-6255f101575f
+html"""
+<pre class="mermaid">
+
+flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+</pre>
+
+"""
+
+# ╔═╡ 3f9dc1c5-b570-4a0f-a993-618fa64ff156
+# ╠═╡ disabled = true
+#=╠═╡
+html"""
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.1.0/dist/mermaid.min.js">
+</script>
+
+"""
+  ╠═╡ =#
+
+# ╔═╡ bf6bd5d7-7c6e-4c0c-bdc7-8d851bbb4486
+# ╠═╡ disabled = true
+#=╠═╡
+<pre class="mermaid">
+
+flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+</pre>
+  ╠═╡ =#
 
 # ╔═╡ dedb1114-ee65-44fd-bcb9-e363ba0546f8
 md"""
@@ -204,10 +303,12 @@ paragraphJustifiedStyling()
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
+HypertextLiteral = "ac1192a8-f4b3-4bfe-ba22-af5b92cd3ab2"
 PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
+HypertextLiteral = "~0.9.4"
 PlutoTeachingTools = "~0.2.8"
 PlutoUI = "~0.7.50"
 """
@@ -218,7 +319,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.1"
 manifest_format = "2.0"
-project_hash = "69f995e0dc6a1c35a46792be048dc8abd510ce38"
+project_hash = "d3a0126ab005e9fb67731a36a99b12bbac071747"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -578,6 +679,15 @@ version = "17.4.0+0"
 # ╠═43a14226-f373-4dbc-a036-b34da5f4eace
 # ╟─be458f4f-8d7f-4623-9364-e67695d3c461
 # ╠═d6b48024-71cf-4b09-9b2c-b0c52b6f2105
+# ╠═c732167a-91a7-4bac-985a-f1fbc0cfced4
+# ╠═80d689f3-a71c-4a74-a049-f6e56cf541f1
+# ╠═c97152d8-69b2-4f30-ad42-33af82d7dce5
+# ╟─89835fa4-2861-4055-8c49-9a092e564d6f
+# ╠═dc470e53-4a1a-4861-85e9-3c5d0cd3791d
+# ╠═ae1f85f0-8e99-46cd-9355-efd6f0c3df20
+# ╠═ee83cd72-a8f1-4213-9acc-6255f101575f
+# ╠═3f9dc1c5-b570-4a0f-a993-618fa64ff156
+# ╟─bf6bd5d7-7c6e-4c0c-bdc7-8d851bbb4486
 # ╟─dedb1114-ee65-44fd-bcb9-e363ba0546f8
 # ╟─29b47e44-cfbb-4fc5-bc07-c32202cf2fdb
 # ╟─9bea2bbe-e223-4f2a-83ff-fafce4547b7d
