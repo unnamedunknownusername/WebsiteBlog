@@ -29,7 +29,7 @@ md"""
 """
 
 # ╔═╡ e585127b-d136-4bc6-9757-f93e5000399e
-PlutoTeachingTools.blockquote("If only Jupyter notebooks weren't so state driven. Imagine a notebook that had no state - it would be so much better")
+PlutoTeachingTools.blockquote("If only Jupyter notebooks weren't so state driven. Imagine a notebook system that had no state - it would be so much better")
 
 # ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
 
@@ -92,6 +92,26 @@ md"""
 
 
 # ╔═╡ 9bea2bbe-e223-4f2a-83ff-fafce4547b7d
+md"""
+# It is still only v0.xyz
+"""
+
+# ╔═╡ 73de53db-b2ea-4bfe-b41e-63cb2c58b6d7
+md"""
+As of writing this, it is currently `v0.19.23` and I honestly would be perfectly content with it there were no more updates. That is not to say I don't like the updates (*please keep them coming)*, far from it, its updates and improvements continue to make it the most amazing tool I have seen in a long time.
+
+I more meant that I have been speaking about pluto to some and said the words "I don't know how it could get better" only to be met then the team releases an even **better** update
+
+And then again I will say "I don't know how it could get better, it is so good" and again the `Pluto.jl` contributors will exceed my expectations and release an even **better better** update
+
+
+...you get the picture,
+
+
+its so good as is, and is only getting better with each update, I cannot wait to see what it will become in the future.
+"""
+
+# ╔═╡ dafd77a0-fb1c-4bf8-9bf2-a38f1801b340
 
 
 # ╔═╡ 423b42b7-b49e-4fd2-b163-79a5e4e3b0fd
@@ -100,7 +120,9 @@ This whole site is built off of the back of pluto notebooks and I think that is 
 """
 
 # ╔═╡ ffe2c713-7372-4dde-bce1-707dd405b153
-
+md"""
+On that note, I just wanted to say a **BIG THANK YOU** to the `Pluto.jl` team - If you guys ever see this - thank you so much for all your hard work and dedication. Know that you made me rediscover my love for code and what is possible if you dream big enough.
+"""
 
 # ╔═╡ e8702088-1477-4b0f-ab95-49f381d0cdd3
 md"""
@@ -111,6 +133,24 @@ md"""
 md"""
 ## Import Packages
 """
+
+# ╔═╡ 9ee904c8-7839-4557-a224-31ecb023d516
+md"""
+## Formatting/Adjusutments To Look And Feel
+"""
+
+# ╔═╡ aaa45fe2-2193-43f8-acb8-446b6bcf2310
+paragraphJustifiedStyling()=html"""
+<style>
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
+"""
+
+# ╔═╡ 44f543f3-07f3-486c-855d-b1b5a74df1c4
+paragraphJustifiedStyling()
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -461,8 +501,8 @@ version = "17.4.0+0"
 
 # ╔═╡ Cell order:
 # ╟─2d76feb3-b21d-4018-9c09-4b757e6336e7
-# ╠═eb21e818-9e5e-42a0-838e-87a7323a4b1e
-# ╠═bdacad08-a9b1-11ec-1013-45393b4e19c9
+# ╟─eb21e818-9e5e-42a0-838e-87a7323a4b1e
+# ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
 # ╟─e585127b-d136-4bc6-9757-f93e5000399e
 # ╠═4b62caa1-90a7-4451-a313-eb93badf618d
 # ╟─7e0348f6-2284-475d-a101-c6842b05db4c
@@ -480,11 +520,16 @@ version = "17.4.0+0"
 # ╠═23488951-afa9-46db-961c-b57753913aed
 # ╠═64599d86-b946-4211-a963-b4a6b7635101
 # ╠═4537313c-aed5-4657-932e-017d1c4b3ec9
-# ╠═9bea2bbe-e223-4f2a-83ff-fafce4547b7d
+# ╟─9bea2bbe-e223-4f2a-83ff-fafce4547b7d
+# ╟─73de53db-b2ea-4bfe-b41e-63cb2c58b6d7
+# ╠═dafd77a0-fb1c-4bf8-9bf2-a38f1801b340
 # ╟─423b42b7-b49e-4fd2-b163-79a5e4e3b0fd
-# ╠═ffe2c713-7372-4dde-bce1-707dd405b153
+# ╟─ffe2c713-7372-4dde-bce1-707dd405b153
 # ╟─e8702088-1477-4b0f-ab95-49f381d0cdd3
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
+# ╟─9ee904c8-7839-4557-a224-31ecb023d516
+# ╠═aaa45fe2-2193-43f8-acb8-446b6bcf2310
+# ╠═44f543f3-07f3-486c-855d-b1b5a74df1c4
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
