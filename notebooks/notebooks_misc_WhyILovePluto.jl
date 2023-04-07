@@ -9,35 +9,123 @@ md"""
 # $(frontmatter.title)
 """
 
+# ╔═╡ eb21e818-9e5e-42a0-838e-87a7323a4b1e
+TableOfContents()
+
 # ╔═╡ bdacad08-a9b1-11ec-1013-45393b4e19c9
 frontmatter = (
-	title = "Why I Love Pluto.jl",
-	description = "Some of the reasons I enjoy working with Pluto.jl",
-	layout = "layout.jlhtml",
-	tags = ["Julia", "Programming", "Language","Pluto"],
+
+title = "Why I Love Pluto.jl",
+description = "Some of the reasons I enjoy working with Pluto.jl",
+layout = "layout.jlhtml",
+tags = ["Julia", "Programming", "Language","Pluto"],
+
 );
+
+# ╔═╡ e585127b-d136-4bc6-9757-f93e5000399e
+PlutoTeachingTools.blockquote("If only Jupyter notebooks weren't so state driven. Imagine a notebook system that had no state - it would be so much better")
 
 # ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
 
 
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
-TableOfContents()
+md"""
+# Excel has its limitations
+"""
+
+# ╔═╡ 4768f2c0-76cd-4abb-955a-9f455ef2b0b8
+
+
+# ╔═╡ 450b5d2c-21b4-462c-ad45-8a5d9b13d0b9
+
+
+# ╔═╡ a9084011-7989-40e2-b674-c84dae14e2a8
+
+
+# ╔═╡ f9ea7af0-9360-4df6-9ef8-b76988105e7d
+md"""
+# The problem with Jupyter
+"""
 
 # ╔═╡ e1386345-4493-4467-b634-8da57532fb11
+md"""
+## Reproducibility
+"""
+
+# ╔═╡ 6176c6ed-1c0d-4f69-8d6f-108e825c5f29
+
+
+# ╔═╡ 3915ed80-4717-4c28-992e-6b9e910f06df
+
+
+# ╔═╡ a56219c0-8d9a-4f6c-8a69-b052153bef9a
 
 
 # ╔═╡ 6752f134-9f36-4646-a914-a916f757719b
-
+md"""
+### No hidden state or workspace 
+"""
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
 
 
 # ╔═╡ a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+md"""
+### Package managment 
+"""
 
+# ╔═╡ 23488951-afa9-46db-961c-b57753913aed
+
+
+# ╔═╡ 64599d86-b946-4211-a963-b4a6b7635101
+md"""
+### Flexibility - exposed `.html`, `.css`, and `.js`
+"""
+
+# ╔═╡ 4537313c-aed5-4657-932e-017d1c4b3ec9
+
+
+# ╔═╡ 9bea2bbe-e223-4f2a-83ff-fafce4547b7d
+md"""
+# It is still only v0.xyz
+"""
+
+# ╔═╡ 73de53db-b2ea-4bfe-b41e-63cb2c58b6d7
+md"""
+As of writing this, it is currently `v0.19.23` and I honestly would be perfectly content with it there were no more updates. That is not to say I don't like the updates (*please keep them coming)*, far from it, its updates and improvements continue to make it the most amazing tool I have seen in a long time.
+
+I more meant that I have been speaking about pluto to some and said the words "I don't know how it could get better" only to be met then the team releases an even **better** update
+
+And then again I will say "I don't know how it could get better, it is so good" and again the `Pluto.jl` contributors will exceed my expectations and release an even **better better** update
+
+
+...you get the picture,
+
+
+its so good as is, and is only getting better with each update, I cannot wait to see what it will become in the future.
+"""
+
+# ╔═╡ dafd77a0-fb1c-4bf8-9bf2-a38f1801b340
+
+
+# ╔═╡ 423b42b7-b49e-4fd2-b163-79a5e4e3b0fd
+md"""
+This whole site is built off of the back of pluto notebooks and I think that is testament to the philosopy and out-of-the box thinking of the Pluto.jl project. Yes in the past notebooks have not been used as "actual" source code and were more for experimentation, but why should they be limited to this, opportunity is bound one just has to open there eyes and see it.
+"""
+
+# ╔═╡ ffe2c713-7372-4dde-bce1-707dd405b153
+md"""
+On that note, I just wanted to say a **BIG THANK YOU** to the `Pluto.jl` team - If you guys ever see this - thank you so much for all your hard work and dedication. Know that you made me rediscover my love for code and what is possible if you dream big enough.
+"""
+
+# ╔═╡ e8702088-1477-4b0f-ab95-49f381d0cdd3
+md"""
+# Appendix
+"""
 
 # ╔═╡ f333aa56-2cbc-4caf-8fde-3515bbb2d977
 md"""
-# Import Packages
+## Import Packages
 """
 
 # ╔═╡ 79a6c1e6-b22e-4674-ba0a-8862336864e3
@@ -46,6 +134,24 @@ begin
 	using PlutoTeachingTools
 end
 
+# ╔═╡ 9ee904c8-7839-4557-a224-31ecb023d516
+md"""
+## Formatting/Adjusutments To Look And Feel
+"""
+
+# ╔═╡ aaa45fe2-2193-43f8-acb8-446b6bcf2310
+paragraphJustifiedStyling()=html"""
+<style>
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
+"""
+
+# ╔═╡ 44f543f3-07f3-486c-855d-b1b5a74df1c4
+paragraphJustifiedStyling()
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -53,7 +159,7 @@ PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-PlutoTeachingTools = "~0.2.6"
+PlutoTeachingTools = "~0.2.8"
 PlutoUI = "~0.7.50"
 """
 
@@ -83,9 +189,9 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[deps.CodeTracking]]
 deps = ["InteractiveUtils", "UUIDs"]
-git-tree-sha1 = "4f619d394ac521dc59cb80a2cd8f78578e483a9d"
+git-tree-sha1 = "d730914ef30a06732bdd9f763f6cc32e92ffbff1"
 uuid = "da1fd8a2-8d9e-5ec2-8556-3022fb5608a2"
-version = "1.2.1"
+version = "1.3.1"
 
 [[deps.ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -156,9 +262,9 @@ version = "0.21.3"
 
 [[deps.JuliaInterpreter]]
 deps = ["CodeTracking", "InteractiveUtils", "Random", "UUIDs"]
-git-tree-sha1 = "d9ae7a9081d9b1a3b2a5c1d3dac5e2fdaafbd538"
+git-tree-sha1 = "6a125e6a4cb391e0b9adbd1afa9e771c2179f8ef"
 uuid = "aa1ae85d-cabe-5617-a682-6adf51b2e16a"
-version = "0.9.22"
+version = "0.9.23"
 
 [[deps.LaTeXStrings]]
 git-tree-sha1 = "f2355693d6778a178ade15952b7ac47a4ff97996"
@@ -243,15 +349,15 @@ uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
 version = "0.3.20+0"
 
 [[deps.OrderedCollections]]
-git-tree-sha1 = "85f8e6578bf1f9ee0d11e7bb1b1456435479d47c"
+git-tree-sha1 = "d321bf2de576bf25ec4d3e4360faca399afca282"
 uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
-version = "1.4.1"
+version = "1.6.0"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6f4fbcd1ad45905a5dee3f4256fabb49aa2110c6"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.7"
+version = "2.5.8"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -272,9 +378,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "eb11c2e0586fdf48d5d262ba6e29e438ccc512d9"
+git-tree-sha1 = "b970826468465da71f839cdacc403e99842c18ea"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.6"
+version = "0.2.8"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -313,9 +419,9 @@ version = "1.3.0"
 
 [[deps.Revise]]
 deps = ["CodeTracking", "Distributed", "FileWatching", "JuliaInterpreter", "LibGit2", "LoweredCodeUtils", "OrderedCollections", "Pkg", "REPL", "Requires", "UUIDs", "Unicode"]
-git-tree-sha1 = "90cb983381a9dc7d3dff5fb2d1ee52cd59877412"
+git-tree-sha1 = "feafdc70b2e6684314e188d95fe66d116de834a7"
 uuid = "295af30f-e4ad-537b-8983-00126c2a3abe"
-version = "3.5.1"
+version = "3.5.2"
 
 [[deps.SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
@@ -356,9 +462,9 @@ deps = ["InteractiveUtils", "Logging", "Random", "Serialization"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[deps.Tricks]]
-git-tree-sha1 = "6bac775f2d42a611cdfcd1fb217ee719630c4175"
+git-tree-sha1 = "aadb748be58b492045b4f56166b5188aa63ce549"
 uuid = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
-version = "0.1.6"
+version = "0.1.7"
 
 [[deps.URIs]]
 git-tree-sha1 = "074f993b0ca030848b897beff716d93aca60f06a"
@@ -396,14 +502,35 @@ version = "17.4.0+0"
 # ╔═╡ Cell order:
 # ╟─f5450eab-0f9f-4b7f-9b80-992d3c553ba9
 # ╟─2d76feb3-b21d-4018-9c09-4b757e6336e7
-# ╠═bdacad08-a9b1-11ec-1013-45393b4e19c9
+# ╟─eb21e818-9e5e-42a0-838e-87a7323a4b1e
+# ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
+# ╟─e585127b-d136-4bc6-9757-f93e5000399e
 # ╠═4b62caa1-90a7-4451-a313-eb93badf618d
-# ╠═7e0348f6-2284-475d-a101-c6842b05db4c
-# ╠═e1386345-4493-4467-b634-8da57532fb11
-# ╠═6752f134-9f36-4646-a914-a916f757719b
+# ╟─7e0348f6-2284-475d-a101-c6842b05db4c
+# ╠═4768f2c0-76cd-4abb-955a-9f455ef2b0b8
+# ╠═450b5d2c-21b4-462c-ad45-8a5d9b13d0b9
+# ╠═a9084011-7989-40e2-b674-c84dae14e2a8
+# ╟─f9ea7af0-9360-4df6-9ef8-b76988105e7d
+# ╟─e1386345-4493-4467-b634-8da57532fb11
+# ╠═6176c6ed-1c0d-4f69-8d6f-108e825c5f29
+# ╠═3915ed80-4717-4c28-992e-6b9e910f06df
+# ╠═a56219c0-8d9a-4f6c-8a69-b052153bef9a
+# ╟─6752f134-9f36-4646-a914-a916f757719b
 # ╠═9f1effe5-f766-4f2e-aa4b-3967261fd84b
-# ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╟─a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╠═23488951-afa9-46db-961c-b57753913aed
+# ╠═64599d86-b946-4211-a963-b4a6b7635101
+# ╠═4537313c-aed5-4657-932e-017d1c4b3ec9
+# ╟─9bea2bbe-e223-4f2a-83ff-fafce4547b7d
+# ╟─73de53db-b2ea-4bfe-b41e-63cb2c58b6d7
+# ╠═dafd77a0-fb1c-4bf8-9bf2-a38f1801b340
+# ╟─423b42b7-b49e-4fd2-b163-79a5e4e3b0fd
+# ╟─ffe2c713-7372-4dde-bce1-707dd405b153
+# ╟─e8702088-1477-4b0f-ab95-49f381d0cdd3
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
+# ╟─9ee904c8-7839-4557-a224-31ecb023d516
+# ╠═aaa45fe2-2193-43f8-acb8-446b6bcf2310
+# ╠═44f543f3-07f3-486c-855d-b1b5a74df1c4
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
