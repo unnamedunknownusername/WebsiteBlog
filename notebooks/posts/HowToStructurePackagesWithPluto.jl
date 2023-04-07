@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.22
+# v0.19.23
 
 using Markdown
 using InteractiveUtils
@@ -27,9 +27,9 @@ md"""
 TableOfContents()
 
 # ╔═╡ a9774883-e87d-435c-96df-352086d62037
-md"""
-I have a dream that one day all code will be noteboooks and everyone from everywhere will understand what the code is doing - or at the very least I will know what I was doing 5 years from now after I have forgotten why I wrote this function in the first place
-"""
+blockquote(md"""
+I have a dream that one day all code will be noteboooks and everyone from everywhere will understand what the code is doing - or at the very least, 5 years from now I will remember what I was trying to do - despite me forgotting why I wrote this function in the first place!
+""")
 
 # ╔═╡ 39f8fd05-15a5-4dc5-8773-60cbe08a8ff2
 md"""
@@ -37,10 +37,14 @@ md"""
 """
 
 # ╔═╡ 6aff158c-c900-4933-896d-3aac00cc585a
-
+md"""
+Literae Programing [^Literate Programming Wiki]
+"""
 
 # ╔═╡ ded8db77-e0d7-4458-b635-9d94b99b9ba9
-
+md"""
+[^Literate Programming Wiki] 
+"""
 
 # ╔═╡ 347f88c6-6989-4fe2-bbb1-b2d2d051fe16
 
@@ -65,9 +69,7 @@ in order to fully embrace this paradigm one must take the stance that files are 
 
 
 # ╔═╡ 8977763c-ce75-427c-a152-e3a40e6f7056
-md"""
-[Literae Programing](https://en.wikipedia.org/wiki/Literate_programming#:~:text=Literate%20programming.%20Literate%20programming%20is%20a%20programming%20paradigm,from%20which%20compilable%20source%20code%20can%20be%20generated.)
-"""
+
 
 # ╔═╡ cb897219-e8c5-432c-947e-941820f86481
 
@@ -155,7 +157,7 @@ PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-PlutoTeachingTools = "~0.2.6"
+PlutoTeachingTools = "~0.2.8"
 PlutoUI = "~0.7.50"
 """
 
@@ -165,7 +167,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.1"
 manifest_format = "2.0"
-project_hash = "d14bdb437607ceff67f6e42cf6036119a15aae48"
+project_hash = "6bb201a032efe7739abcd2613b6a702f0cfd8acf"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -351,9 +353,9 @@ version = "1.4.1"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6f4fbcd1ad45905a5dee3f4256fabb49aa2110c6"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.7"
+version = "2.5.8"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -374,9 +376,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "eb11c2e0586fdf48d5d262ba6e29e438ccc512d9"
+git-tree-sha1 = "b970826468465da71f839cdacc403e99842c18ea"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.6"
+version = "0.2.8"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -529,7 +531,7 @@ version = "17.4.0+0"
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
 # ╟─e4c34d74-51c5-4c08-ba85-636dfc91813e
-# ╟─5f6f51d7-6a95-4b10-b34a-cfb00a779944
+# ╠═5f6f51d7-6a95-4b10-b34a-cfb00a779944
 # ╠═1c5a4646-937c-42cd-bdb5-efc17eac9227
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
