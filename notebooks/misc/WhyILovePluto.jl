@@ -111,20 +111,34 @@ md"""
 
 # ╔═╡ 64599d86-b946-4211-a963-b4a6b7635101
 md"""
-# Flexibility - exposed `.html`, `.css`, and `.js`
+# Flexibility and discernability - exposed `.html`, `.css`, and `.js`
 """
 
 # ╔═╡ 788d35a1-5bcd-40e6-801e-da1a0f8629be
-
+md"""
+## Freedom to overwrite the base `.css`
+"""
 
 # ╔═╡ 43a14226-f373-4dbc-a036-b34da5f4eace
 
 
 # ╔═╡ be458f4f-8d7f-4623-9364-e67695d3c461
-
+md"""
+## Javascript packages
+"""
 
 # ╔═╡ d6b48024-71cf-4b09-9b2c-b0c52b6f2105
 
+
+# ╔═╡ dedb1114-ee65-44fd-bcb9-e363ba0546f8
+md"""
+## Packed up as `PlutoUI.jl`
+"""
+
+# ╔═╡ 29b47e44-cfbb-4fc5-bc07-c32202cf2fdb
+md"""
+It is these properties that have allowed things like the `Table Of Contents` on the right hand side of the screen to be made and bundled along with other useful components in the very useful PlutoUI.jl package, allowing anyone to expand/augment the type of widgets and what can be done "on top of" the existing baseline functionality of Pluto.jl. This sort of modularity and exapandibility is a key factor when I consider Pluto vs other similar tools and allows a seperation of concerns which enables individual contributors "merely" making a nice clock widget to have farther reaching consequences.
+"""
 
 # ╔═╡ 9bea2bbe-e223-4f2a-83ff-fafce4547b7d
 md"""
@@ -562,8 +576,10 @@ version = "17.4.0+0"
 # ╟─64599d86-b946-4211-a963-b4a6b7635101
 # ╠═788d35a1-5bcd-40e6-801e-da1a0f8629be
 # ╠═43a14226-f373-4dbc-a036-b34da5f4eace
-# ╠═be458f4f-8d7f-4623-9364-e67695d3c461
+# ╟─be458f4f-8d7f-4623-9364-e67695d3c461
 # ╠═d6b48024-71cf-4b09-9b2c-b0c52b6f2105
+# ╟─dedb1114-ee65-44fd-bcb9-e363ba0546f8
+# ╟─29b47e44-cfbb-4fc5-bc07-c32202cf2fdb
 # ╟─9bea2bbe-e223-4f2a-83ff-fafce4547b7d
 # ╟─73de53db-b2ea-4bfe-b41e-63cb2c58b6d7
 # ╠═dafd77a0-fb1c-4bf8-9bf2-a38f1801b340
