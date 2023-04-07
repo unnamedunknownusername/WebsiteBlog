@@ -11,10 +11,12 @@ md"""
 
 # ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
 frontmatter = (
-	title = "Tim Holy Traits",
-	description = "A simple description of the THTT patttern in Julia",
-	layout = "layout.jlhtml",
-		tags = ["Julia", "Programming", "Language","Pluto"],
+
+title = "Tim Holy Traits",
+description = "A simple description of the THTT patttern in Julia",
+layout = "layout.jlhtml",
+tags = ["Julia", "Programming", "Language","Pluto"],
+
 );
 
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
@@ -30,17 +32,17 @@ md"""
 
 # ╔═╡ aa52e7d6-b987-4557-9013-749fe3d9ee06
 md"""
-In programming languaes one often has to somehow specify the behaiour ofr objects/things, e.g. in most object orientated languages we use polymorphism through classes and abstract calsses to create instances of parent and child objects so as to group attributes or inherit common methods. 
+In programming languages one often has to somehow specify the behaiour of objects/things, e.g. in most object orientated languages we use polymorphism through classes and abstract classes to create instances of parent and child objects so as to group attributes or inherit common methods. 
 
 """
 
 # ╔═╡ 021ca64f-6dbd-4d7b-a8fa-cfd810cf4a18
 md"""
-Another such way of pulling together similar functionality is through interfaces. The idea behind interfaces is, broadly speaking, to specify empty "stuff" (ethods or data) and later when another class "implements" (a la inherits) the aforementioned interface it has to provide/populate/"fill-in" thes empty parts
+Another such way of pulling together similar functionality is through interfaces. The idea behind interfaces is, broadly speaking, to specify empty "stuff" (methods or data) and later when another class "implements" (a la inherits) the aforementioned interface it has to provide/populate/"fill-in" these empty parts
 
 """
 
-# ╔═╡ ee9f74bc-5c29-4d09-befd-f6e3f98fae5f
+# ╔═╡ 3ff76201-e2e5-405d-97d2-bc5ad3f40a7c
 md"""
 as an abstract example we could create an interface with an empty method
 ```
@@ -49,7 +51,10 @@ Interface MyAnimalInterface
 
 	}
 ```
+"""
 
+# ╔═╡ ee9f74bc-5c29-4d09-befd-f6e3f98fae5f
+md"""
 we could create a dog class and if they implment the interface they would then need to "fill-in" the 
 
 ```
@@ -59,6 +64,11 @@ MyDogClass implements MyAnimalInterface
 	}
 ```
 
+
+"""
+
+# ╔═╡ 7684066b-72b5-42e4-b287-416ba6a22a37
+md"""
 usually if we leave it empty and don't "fill-in" the interface data we would get an error
 ```
 MyDogClass implements MyAnimalInterface
@@ -67,9 +77,6 @@ MyDogClass implements MyAnimalInterface
 	}
 ->THIS WOULD ERROR
 ```
-
-
-
 """
 
 # ╔═╡ d4e4ebdb-9f82-4c32-9a0d-d2671c5ed211
@@ -191,7 +198,7 @@ FormattingModule = PlutoTeachingTools.@ingredients("../FormattingModule.jl")
 
 # ╔═╡ 61f7d41e-11ee-4caf-a449-761a52adb1e9
 md"""
-## Formatting\Modifcations To Look and Feel
+## Formatting/Modifications To Look and Feel
 """
 
 # ╔═╡ 02e1c6df-9b7d-48c6-a635-54871d4bcb69
@@ -201,16 +208,16 @@ FormattingModule.paragraphJustifiedStyling()
 PlutoTeachingTools.BottomFootnotesNumbered()
 
 # ╔═╡ f7180788-a812-41b1-aa69-f7da25e21385
-#PlutoTeachingTools.InlineFootnotesNumbered()
+
 
 # ╔═╡ a3cb6606-9a32-44d5-b41d-41667ac016fe
-PlutoTeachingTools.InlineFootnotesStyleSuperscript()
+
 
 # ╔═╡ cf1e3ecb-dfc5-4d24-846c-128053b2e8af
-InlineFootnotesNumbered2()
+
 
 # ╔═╡ 52bb7172-f288-4072-9446-4c038901da69
-#InlineFootnotesNumbered0()
+
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -231,7 +238,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.1"
 manifest_format = "2.0"
-project_hash = "d3a0126ab005e9fb67731a36a99b12bbac071747"
+project_hash = "6c2315a41c72a473feb0273a49246c4a1d21ced4"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -566,11 +573,13 @@ version = "17.4.0+0"
 # ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
 # ╟─2d438832-40cd-45bf-9305-46f59a3fca33
 # ╟─7e0348f6-2284-475d-a101-c6842b05db4c
-# ╟─5d92ce0d-5d4e-47b7-a650-c1e86caadd4f
+# ╠═5d92ce0d-5d4e-47b7-a650-c1e86caadd4f
 # ╟─e1386345-4493-4467-b634-8da57532fb11
 # ╟─aa52e7d6-b987-4557-9013-749fe3d9ee06
 # ╟─021ca64f-6dbd-4d7b-a8fa-cfd810cf4a18
+# ╟─3ff76201-e2e5-405d-97d2-bc5ad3f40a7c
 # ╟─ee9f74bc-5c29-4d09-befd-f6e3f98fae5f
+# ╟─7684066b-72b5-42e4-b287-416ba6a22a37
 # ╟─d4e4ebdb-9f82-4c32-9a0d-d2671c5ed211
 # ╟─e66d670a-eba5-4b5e-a199-e52b7873f783
 # ╟─8a7ac42c-40aa-46f2-b76a-c65fcca83cb4
