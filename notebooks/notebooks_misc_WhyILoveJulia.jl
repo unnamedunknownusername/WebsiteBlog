@@ -24,7 +24,7 @@ TableOfContents()
 
 # ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
 PlutoTeachingTools.blockquote(
-"What if we had Matlab matricies, syntax similar to (or better than) Python, and speed comparable to C. Surely that's not possible..."
+"What if we had inbuilt Matlab matricies, syntax similar to (or better than) Python, and speed comparable to C. Surely that's not possible..."
 
 )
 
@@ -67,15 +67,20 @@ md"""
 # I meet Matlab
 """
 
-# ╔═╡ e1386345-4493-4467-b634-8da57532fb11
+# ╔═╡ 7730bcb4-4daf-481f-b6b2-588b377837c0
 
+
+# ╔═╡ e1386345-4493-4467-b634-8da57532fb11
+md"""
+I loved Matlabs syntax but everything about it felt
+"""
 
 # ╔═╡ 6752f134-9f36-4646-a914-a916f757719b
 
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
 md"""
-The icing on the caske was that Pluto.jl came along in 2020 and gave me a means to get my idea transformed into code as fast as I thought of them. This immidiacy of interaction meant I had a freedom and could prototype in a style that fit the way I iterative built things, solving perhaps almost all of the shortcomings which I had so longed for in other earlier programming languages I had used.
+The icing on the cake was that Pluto.jl came along in 2020 and gave me a means to get my idea transformed into code as fast as I thought of them. This immidiacy of interaction meant I had a freedom and could prototype in a style that fit the way I iterative built things, solving perhaps almost all of the shortcomings which I had so longed for in other earlier programming languages I had used.
 """
 
 # ╔═╡ a3ca2950-4bc0-45ed-9652-24ed589e1dfd
@@ -480,15 +485,16 @@ version = "17.4.0+0"
 # ╠═67fd3d82-329a-4819-ae47-918a1ac48476
 # ╠═3be101a6-1e01-406e-9baa-b2b115547f5c
 # ╠═c133e75b-2bf2-4f16-a715-dc348cccc87d
-# ╠═7e0348f6-2284-475d-a101-c6842b05db4c
+# ╟─7e0348f6-2284-475d-a101-c6842b05db4c
+# ╠═7730bcb4-4daf-481f-b6b2-588b377837c0
 # ╠═e1386345-4493-4467-b634-8da57532fb11
 # ╠═6752f134-9f36-4646-a914-a916f757719b
 # ╟─9f1effe5-f766-4f2e-aa4b-3967261fd84b
 # ╟─a3ca2950-4bc0-45ed-9652-24ed589e1dfd
-# ╟─0530bb2e-fd9f-4c3f-aaed-586cd9093d31
+# ╠═0530bb2e-fd9f-4c3f-aaed-586cd9093d31
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
-# ╟─8597390d-3936-451d-ad6b-b82543509797
+# ╠═8597390d-3936-451d-ad6b-b82543509797
 # ╠═9cbe1cce-2d4e-4e8f-8ada-48c893017cb8
 # ╠═aba3935a-2a45-4217-91ef-fb48e237532d
 # ╟─00000000-0000-0000-0000-000000000001
