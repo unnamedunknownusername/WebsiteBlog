@@ -11,20 +11,61 @@ md"""
 
 # ╔═╡ bdacad08-a9b1-11ec-1013-45393b4e19c9
 frontmatter = (
-	title = "Why I Love Julia",
-	description = "A simple notebook demonstrating the Julia syntax essentials",
-	layout = "layout.jlhtml",
-		tags = ["Julia", "Programming", "Language","Pluto"],
+
+title = "Why I Love Julia",
+description = "A story on how I discovered and came to love the Julia programming language",
+layout = "layout.jlhtml",
+tags = ["Julia", "Programming", "Language","Pluto"],
+
 );
 
-# ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
+# ╔═╡ 9aa9819d-6c9d-4f85-b1b8-8dbcbec955e4
+TableOfContents()
 
+# ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
+PlutoTeachingTools.blockquote(
+"What if we had Matlab matricies, syntax similar to (or better than) Python, and speed comparable to C. Surely that's not possible..."
+
+)
 
 # ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
 
 
+# ╔═╡ d78b8982-b411-4ac8-9993-2caa49f66530
+
+
+# ╔═╡ 3f5d1d3d-7639-44fe-b52f-f8afb2639463
+md"""
+# My first programming language - Java
+"""
+
+# ╔═╡ cc6f1dee-87af-4a94-afff-49977aeb21da
+
+
+# ╔═╡ 804a2b90-3b78-485b-b1e4-0d4eea8b2328
+
+
+# ╔═╡ df912c59-4ad0-4348-ac13-2d499bd9b58a
+
+
+# ╔═╡ c68c42db-97f5-4e07-af99-9f883e0b3ca6
+md"""
+# Welcome to Python
+"""
+
+# ╔═╡ 67fd3d82-329a-4819-ae47-918a1ac48476
+
+
+# ╔═╡ 3be101a6-1e01-406e-9baa-b2b115547f5c
+
+
+# ╔═╡ c133e75b-2bf2-4f16-a715-dc348cccc87d
+
+
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
-TableOfContents()
+md"""
+# I meet Matlab
+"""
 
 # ╔═╡ e1386345-4493-4467-b634-8da57532fb11
 
@@ -33,14 +74,23 @@ TableOfContents()
 
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
-
+md"""
+The icing on the caske was that Pluto.jl came along in 2020 and gave me a means to get my idea transformed into code as fast as I thought of them. This immidiacy of interaction meant I had a freedom and could prototype in a style that fit the way I iterative built things, solving perhaps almost all of the shortcomings which I had so longed for in other earlier programming languages I had used.
+"""
 
 # ╔═╡ a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+md"""
+In conclusion there are other more obvious pros to Julia, such as how it solves the two language probelm [LINK HERE] , which other have talked about [LINK HERE] . but I didn;t fall in love with Julia becasue of this. I fell in love with it because it allowed me to be myself and express code as I thought about it. I didn't have to fight against the language or struggle and spend hours fixing indentation, the language experience was collabrative, as if talking to an old friend, and although its ecosysttem is new, and it has its idosyncracies - it is home.
+"""
 
+# ╔═╡ 0530bb2e-fd9f-4c3f-aaed-586cd9093d31
+md"""
+# Appendix
+"""
 
 # ╔═╡ f333aa56-2cbc-4caf-8fde-3515bbb2d977
 md"""
-# Import Packages
+## Import Packages
 """
 
 # ╔═╡ 79a6c1e6-b22e-4674-ba0a-8862336864e3
@@ -49,6 +99,24 @@ begin
 	using PlutoTeachingTools
 end
 
+# ╔═╡ 8597390d-3936-451d-ad6b-b82543509797
+md"""
+## Formatting/Adjusutments To Look And Feel
+"""
+
+# ╔═╡ 9cbe1cce-2d4e-4e8f-8ada-48c893017cb8
+paragraphJustifiedStyling()=html"""
+<style>
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
+"""
+
+# ╔═╡ aba3935a-2a45-4217-91ef-fb48e237532d
+paragraphJustifiedStyling()
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -56,7 +124,7 @@ PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-PlutoTeachingTools = "~0.2.6"
+PlutoTeachingTools = "~0.2.8"
 PlutoUI = "~0.7.50"
 """
 
@@ -66,7 +134,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.1"
 manifest_format = "2.0"
-project_hash = "69f995e0dc6a1c35a46792be048dc8abd510ce38"
+project_hash = "6bb201a032efe7739abcd2613b6a702f0cfd8acf"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -86,9 +154,9 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[deps.CodeTracking]]
 deps = ["InteractiveUtils", "UUIDs"]
-git-tree-sha1 = "4f619d394ac521dc59cb80a2cd8f78578e483a9d"
+git-tree-sha1 = "d730914ef30a06732bdd9f763f6cc32e92ffbff1"
 uuid = "da1fd8a2-8d9e-5ec2-8556-3022fb5608a2"
-version = "1.2.1"
+version = "1.3.1"
 
 [[deps.ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -159,9 +227,9 @@ version = "0.21.3"
 
 [[deps.JuliaInterpreter]]
 deps = ["CodeTracking", "InteractiveUtils", "Random", "UUIDs"]
-git-tree-sha1 = "d9ae7a9081d9b1a3b2a5c1d3dac5e2fdaafbd538"
+git-tree-sha1 = "6a125e6a4cb391e0b9adbd1afa9e771c2179f8ef"
 uuid = "aa1ae85d-cabe-5617-a682-6adf51b2e16a"
-version = "0.9.22"
+version = "0.9.23"
 
 [[deps.LaTeXStrings]]
 git-tree-sha1 = "f2355693d6778a178ade15952b7ac47a4ff97996"
@@ -246,15 +314,15 @@ uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
 version = "0.3.20+0"
 
 [[deps.OrderedCollections]]
-git-tree-sha1 = "85f8e6578bf1f9ee0d11e7bb1b1456435479d47c"
+git-tree-sha1 = "d321bf2de576bf25ec4d3e4360faca399afca282"
 uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
-version = "1.4.1"
+version = "1.6.0"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6f4fbcd1ad45905a5dee3f4256fabb49aa2110c6"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.7"
+version = "2.5.8"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -275,9 +343,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "eb11c2e0586fdf48d5d262ba6e29e438ccc512d9"
+git-tree-sha1 = "b970826468465da71f839cdacc403e99842c18ea"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.6"
+version = "0.2.8"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -316,9 +384,9 @@ version = "1.3.0"
 
 [[deps.Revise]]
 deps = ["CodeTracking", "Distributed", "FileWatching", "JuliaInterpreter", "LibGit2", "LoweredCodeUtils", "OrderedCollections", "Pkg", "REPL", "Requires", "UUIDs", "Unicode"]
-git-tree-sha1 = "90cb983381a9dc7d3dff5fb2d1ee52cd59877412"
+git-tree-sha1 = "feafdc70b2e6684314e188d95fe66d116de834a7"
 uuid = "295af30f-e4ad-537b-8983-00126c2a3abe"
-version = "3.5.1"
+version = "3.5.2"
 
 [[deps.SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
@@ -359,9 +427,9 @@ deps = ["InteractiveUtils", "Logging", "Random", "Serialization"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[deps.Tricks]]
-git-tree-sha1 = "6bac775f2d42a611cdfcd1fb217ee719630c4175"
+git-tree-sha1 = "aadb748be58b492045b4f56166b5188aa63ce549"
 uuid = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
-version = "0.1.6"
+version = "0.1.7"
 
 [[deps.URIs]]
 git-tree-sha1 = "074f993b0ca030848b897beff716d93aca60f06a"
@@ -399,15 +467,29 @@ version = "17.4.0+0"
 # ╔═╡ Cell order:
 # ╟─f5450eab-0f9f-4b7f-9b80-992d3c553ba9
 # ╟─8666ef54-4b89-4772-bbbc-8ff5e60b59cd
-# ╠═bdacad08-a9b1-11ec-1013-45393b4e19c9
-# ╠═2d438832-40cd-45bf-9305-46f59a3fca33
+# ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
+# ╟─9aa9819d-6c9d-4f85-b1b8-8dbcbec955e4
+# ╟─2d438832-40cd-45bf-9305-46f59a3fca33
 # ╠═4b62caa1-90a7-4451-a313-eb93badf618d
+# ╠═d78b8982-b411-4ac8-9993-2caa49f66530
+# ╠═3f5d1d3d-7639-44fe-b52f-f8afb2639463
+# ╠═cc6f1dee-87af-4a94-afff-49977aeb21da
+# ╠═804a2b90-3b78-485b-b1e4-0d4eea8b2328
+# ╠═df912c59-4ad0-4348-ac13-2d499bd9b58a
+# ╠═c68c42db-97f5-4e07-af99-9f883e0b3ca6
+# ╠═67fd3d82-329a-4819-ae47-918a1ac48476
+# ╠═3be101a6-1e01-406e-9baa-b2b115547f5c
+# ╠═c133e75b-2bf2-4f16-a715-dc348cccc87d
 # ╠═7e0348f6-2284-475d-a101-c6842b05db4c
 # ╠═e1386345-4493-4467-b634-8da57532fb11
 # ╠═6752f134-9f36-4646-a914-a916f757719b
-# ╠═9f1effe5-f766-4f2e-aa4b-3967261fd84b
-# ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╟─9f1effe5-f766-4f2e-aa4b-3967261fd84b
+# ╟─a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╟─0530bb2e-fd9f-4c3f-aaed-586cd9093d31
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
+# ╟─8597390d-3936-451d-ad6b-b82543509797
+# ╠═9cbe1cce-2d4e-4e8f-8ada-48c893017cb8
+# ╠═aba3935a-2a45-4217-91ef-fb48e237532d
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
