@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.23
+# v0.19.22
 
 using Markdown
 using InteractiveUtils
@@ -100,24 +100,206 @@ now that [PlutoUI.jl](https://github.com/JuliaPluto/PlutoUI.jl)
 
 
 # ╔═╡ e7753152-42f9-488b-9e32-07ba72baf429
+md"""
+# Some Problems With This approach
+"""
+
+# ╔═╡ dc021945-2ebc-427c-a639-7b5312070022
+md"""
+## Dependencies
+"""
+
+# ╔═╡ 8593536b-209f-4eff-8c56-b4a8fd91f1b8
+md"""
+one probem with any packaging or big problem is that of dependecies and how to manage them. in this regime
+"""
+
+# ╔═╡ 31eef3da-433c-4b20-a7a6-813391a440d3
+md"""
+### The Two Extremes - `@ingredients` everything 
+"""
+
+# ╔═╡ e5531a95-13c0-41ad-bc53-f82d946c58bb
+md"""
+If one subscribes to the above philospy then the next step would be to adopt it. one simple approach would be to remove explicitly creating modules and instead use notebooks as modules, since asmentioned above Pluto has nicely added the ability to embed the `Project.toml` and `Manifest.toml` inside the notebook
+"""
+
+# ╔═╡ ca148ba2-c1b2-48a1-8956-4d7d660faa9e
+md"""
+the simplest way to do this is via PlutoLinks `@ingredients` macro. which according to its docstring:
+"""
+
+# ╔═╡ 5a893a5b-bbaa-4797-a7d0-e724b6796c9d
+PlutoTeachingTools.blockquote("doc(@ingredients)")
+
+# ╔═╡ 1e1e83b3-5236-4507-bfc6-b57a8a0f898f
+md"""
+though with this way we have to use a package cell can can't really use Pluto's built in package management
+"""
+
+# ╔═╡ f2eb8efc-5877-493f-84a9-c2e9a37d1d75
+md"""
+a [shared package environment] (https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management#pattern-the-shared-environment)
+"""
+
+# ╔═╡ 6b7aa29e-6bbf-4b04-b591-2683831b5662
+
+
+# ╔═╡ 5ffe393e-9a39-4a7e-84f9-4988d466d950
 
 
 # ╔═╡ 542f6587-c324-42b2-bbd2-ea26091109ad
+md"""
+### The Two Extremes - Package everything
+"""
+
+# ╔═╡ b42d85fe-e8eb-4b7e-b41f-1bc10eb2a29f
+md"""
+THis is basically copying the `PlutoU.jl` I format. you have a file structure like
+
+
+ADD FILE STRUCTURE
+
+"""
+
+# ╔═╡ 379ac696-6302-4707-9852-7ee38b17f117
+md"""
+Specifically a plain-text/non-notebook julia file in `src\MyPackage` which houses the julia `Module` this is the thing which your other bits of code will be `using` by calling `using MyPackage` in other notebooks. and would look something like this:
+
+"""
+
+# ╔═╡ b4b780de-102a-490d-9810-3ef00c125b75
+md"""
+```julia
+module MyPacakge
+
+import Base: show, get
+import Markdown: htmlesc, withtag
+
+using Reexport
+
+
+const PKG_ROOT_DIR = normpath(joinpath(@__DIR__, ".."))
+
+@reexport module Stuff1
+    include("./Stuff1Functions.jl")
+	include("./Stuff1Structs.jl")
+end 
+
+@reexport module Stuff2
+    include("./Stuff2Functions.jl")
+end 
+
+
+end # module MyPacakge
+
+```
+"""
+
+# ╔═╡ 9f0fa903-54e3-4fbd-9bde-19abeff6e1be
+md"""
+Note here that [`Reexport`](https://github.com/simonster/Reexport.jl) is needed to propagate the exported symbols from the inner "stuff" notebooks, i.e. if `Stuff1Functions.jl` has a cell that reads `export MyFunc` then `Rexport` allows me to call `MyPackage.Stuff1.MyFunc()` if I am `using MyPacakge`. In other words I will be able to write the below code in a sperate unrelated notebook without errors
+"""
+
+# ╔═╡ a50aa988-65be-4d1d-8bdb-4b7885161a87
+md"""
+```julia
+using MyPackage 
+
+MyPackage.Stuff1.MyFunc() 
+
+MyFunc() #because MyFunc() has been "re-exported"
+
+```
+"""
+
+# ╔═╡ a660351d-bc79-4cee-ba24-a7dd9ca95758
+md"""
+In this way if all your associated code is housed in modules/packages 
+
+though it requires the set up of a local registry (which I wont get into here)
+
+this then leads to a quite seamless development experience. When I am creating a new feature/functionality say in `PackageABC` and I want to use existing functionality found in `PacakgeEFG` I just call 
+
+```julia 
+using PackageEFG
+```
+
+and voila' I can reuse my code - it pulls `PacakgeEFG` from the local registry (where all of my code would be stored) and works exactly as intended. 
+
+"""
+
+# ╔═╡ cc5ef0a4-8d7f-4303-96ad-2fcd14373a07
+md"""
+The process outlined above would be alot like packaging and publishing "classes" or "groups of classes" in the traditional object orientated sense - a notebook would contain functions (class methods) and structs(class data/properties) and would be packaged as a module to be consumed (pacakged as a class to be used elswhere - though detaching/refactoring functions/methods from there group/class would be way easier as we will see later). Futhermore there might be some friction/unpleasantness in managing the sheer number of packages  - I have yet to determine my thoughts on this, but it leaves food for thought
+"""
+
+# ╔═╡ 9069dbdc-d02b-47b6-a6ef-1d8f14fb9534
+md"""
+There are some other caveats as the top-level package would still need to have a `Project.toml`. PlutoUI is again an example of this is one calls `using XyzPacakge` in a notebook to use its functionality and includes it in the top level module one still has to manually add it to the shared environment by calling `pkg add XyzPaakcage` at the REPL. This isn't a massive deal but it is substantially less nice then just calling `using` in the notebooks and calling it a day
+"""
+
+# ╔═╡ 937d4c0b-d67b-43d2-9c8b-1515a9d74dfb
+md"""
+Looking at the two extremes I would think packaging is better but the hurdle and added work of setting up a registry would probably mean that most people who adopt this system at least for small projects opt for the much less admin heavy `ingredients` approach
+"""
+
+# ╔═╡ 2aa70776-b7e6-42b7-a5ac-edcc6f900d46
+
+
+# ╔═╡ 480752a1-c1dd-4b9d-9b26-953e26fc116f
+
+
+# ╔═╡ 37f7c4ce-a95f-4453-89c2-f4d8ee06e760
 
 
 # ╔═╡ c578853e-938b-4fef-8072-ced21e8740bb
 md"""
-# Some other notes
+# The Benefits
 """
 
-# ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
+# ╔═╡ 80560068-cd59-4d7a-b8af-58cb984ad0ac
+md"""
+## Move And Grow As-You-Go/Iterative Development
+"""
 
+# ╔═╡ f6677027-178c-413c-86e0-3072ffd9d146
+md"""
+With this approach one can quickly start up a notebook and build a prototype for how things will work and not worry as much about package management or where functions should go. one notebook could contain an entire pipeline from step 1 to step 99 and
+"""
+
+# ╔═╡ 5eed559d-d4c4-4038-8537-0f1f0a1dc51f
+
+
+# ╔═╡ 3ad54b8a-4ca8-4f68-9fc7-189ea1c03d76
+
+
+# ╔═╡ e5818f98-0ded-400e-befb-59ece21f6b39
+
+
+# ╔═╡ 70e13fbb-1e35-4543-86fb-a5f4b5115291
+
+
+# ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
+md"""
+## "Reactive"/Real-Time Tests
+"""
 
 # ╔═╡ e1386345-4493-4467-b634-8da57532fb11
+md"""
+A good time to start to think about breaking off functions into separate files is when when you need to start writing tests.
+"""
+
+# ╔═╡ 522d3409-7acb-492e-9610-6e977a2334e8
+
+
+# ╔═╡ 1c825c00-9c03-4c64-9edb-070f601d0836
 
 
 # ╔═╡ 6752f134-9f36-4646-a914-a916f757719b
-
+md"""
+## Rich Documentation
+"""
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
 
@@ -520,12 +702,42 @@ version = "17.4.0+0"
 # ╠═294e4e12-d429-45e7-b070-7d3ddfc27103
 # ╠═29a950c7-da06-40c4-ae23-b1255527bde5
 # ╠═88fbdfbc-1a5e-41eb-838a-eda29e168d22
-# ╠═e7753152-42f9-488b-9e32-07ba72baf429
-# ╠═542f6587-c324-42b2-bbd2-ea26091109ad
+# ╟─e7753152-42f9-488b-9e32-07ba72baf429
+# ╟─dc021945-2ebc-427c-a639-7b5312070022
+# ╠═8593536b-209f-4eff-8c56-b4a8fd91f1b8
+# ╟─31eef3da-433c-4b20-a7a6-813391a440d3
+# ╟─e5531a95-13c0-41ad-bc53-f82d946c58bb
+# ╟─ca148ba2-c1b2-48a1-8956-4d7d660faa9e
+# ╠═5a893a5b-bbaa-4797-a7d0-e724b6796c9d
+# ╟─1e1e83b3-5236-4507-bfc6-b57a8a0f898f
+# ╠═f2eb8efc-5877-493f-84a9-c2e9a37d1d75
+# ╠═6b7aa29e-6bbf-4b04-b591-2683831b5662
+# ╠═5ffe393e-9a39-4a7e-84f9-4988d466d950
+# ╟─542f6587-c324-42b2-bbd2-ea26091109ad
+# ╟─b42d85fe-e8eb-4b7e-b41f-1bc10eb2a29f
+# ╟─379ac696-6302-4707-9852-7ee38b17f117
+# ╟─b4b780de-102a-490d-9810-3ef00c125b75
+# ╟─9f0fa903-54e3-4fbd-9bde-19abeff6e1be
+# ╟─a50aa988-65be-4d1d-8bdb-4b7885161a87
+# ╟─a660351d-bc79-4cee-ba24-a7dd9ca95758
+# ╟─cc5ef0a4-8d7f-4303-96ad-2fcd14373a07
+# ╠═9069dbdc-d02b-47b6-a6ef-1d8f14fb9534
+# ╟─937d4c0b-d67b-43d2-9c8b-1515a9d74dfb
+# ╠═2aa70776-b7e6-42b7-a5ac-edcc6f900d46
+# ╠═480752a1-c1dd-4b9d-9b26-953e26fc116f
+# ╠═37f7c4ce-a95f-4453-89c2-f4d8ee06e760
 # ╟─c578853e-938b-4fef-8072-ced21e8740bb
-# ╠═7e0348f6-2284-475d-a101-c6842b05db4c
+# ╠═80560068-cd59-4d7a-b8af-58cb984ad0ac
+# ╠═f6677027-178c-413c-86e0-3072ffd9d146
+# ╠═5eed559d-d4c4-4038-8537-0f1f0a1dc51f
+# ╠═3ad54b8a-4ca8-4f68-9fc7-189ea1c03d76
+# ╠═e5818f98-0ded-400e-befb-59ece21f6b39
+# ╠═70e13fbb-1e35-4543-86fb-a5f4b5115291
+# ╟─7e0348f6-2284-475d-a101-c6842b05db4c
 # ╠═e1386345-4493-4467-b634-8da57532fb11
-# ╠═6752f134-9f36-4646-a914-a916f757719b
+# ╠═522d3409-7acb-492e-9610-6e977a2334e8
+# ╠═1c825c00-9c03-4c64-9edb-070f601d0836
+# ╟─6752f134-9f36-4646-a914-a916f757719b
 # ╠═9f1effe5-f766-4f2e-aa4b-3967261fd84b
 # ╟─a3ca2950-4bc0-45ed-9652-24ed589e1dfd
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
