@@ -1,6 +1,49 @@
 [
 
 {
+"title": "A New Way To Code",
+"contents": 
+[
+
+{
+"name": "Overview",
+"notebook_path": "notebooks/structure/overview.jl",
+"video_id": "",
+"preview_image_url": ""
+},
+
+{
+"name": "File/Function1",
+"notebook_path": "notebooks/structure/function1.jl",
+"video_id": "",
+"preview_image_url": ""
+},
+
+{
+"name": "File/Function2",
+"notebook_path": "notebooks/structure/function2.jl",
+"video_id": "",
+"preview_image_url": ""
+},
+
+{
+"name": "Module/Package",
+"notebook_path": "notebooks/structure/module.jl",
+"video_id": "",
+"preview_image_url": ""
+},
+
+{
+"name": "Calling/Using it",
+"notebook_path": "notebooks/structure/usingit.jl",
+"video_id": "",
+"preview_image_url": ""
+}
+
+]
+},
+
+{
 "title": "Aritcles, Posts, Stuff, Thoughts, etc",
 "contents": 
 [
