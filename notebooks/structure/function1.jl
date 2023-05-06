@@ -1,25 +1,20 @@
 ### A Pluto.jl notebook ###
-# v0.19.22
+# v0.19.25
 
 using Markdown
 using InteractiveUtils
 
 # ╔═╡ 79a6c1e6-b22e-4674-ba0a-8862336864e3
 begin 
+	using DocStringExtensions
+	using PlutoTest
 	using PlutoUI
 	using PlutoTeachingTools
 end
 
 # ╔═╡ bdacad08-a9b1-11ec-1013-45393b4e19c9
 # hideall
-title = "Insert Title Here";
-
-# ╔═╡ 2d438832-40cd-45bf-9305-46f59a3fca33
-"""
-+++
-title = "$title"
-+++
-""" |> Base.Text
+title = "Function1 (A Simple String Manipulation Function)";
 
 # ╔═╡ 4b62caa1-90a7-4451-a313-eb93badf618d
 md"""
@@ -29,32 +24,140 @@ md"""
 # ╔═╡ 7e0348f6-2284-475d-a101-c6842b05db4c
 TableOfContents()
 
+# ╔═╡ f9936e15-fda1-4902-9222-e546ee72b9ea
+md"""
+#### Description
+This file is part of the example structure showing you how to use pluto as actual files inside a larger codebase/project. This file will contain a simple string manipulation function that will be used "elsewhere in the project".
+"""
+
 # ╔═╡ e1386345-4493-4467-b634-8da57532fb11
+md"""
+# Constants/Globals
+"""
+
+# ╔═╡ 2cc56a9d-c4ab-45cb-b583-7ffc2a45ff51
+# here is where we can create
+
+# ╔═╡ e286b69d-9f4a-4307-916f-563f2c861a8e
+MY_BEGINNING_STRING = "Hello there"
+
+# ╔═╡ 3fa33fec-aca4-4ecd-aecc-e09e510e9131
+MY_END_STRING = "Isn't it a nice day today?"
+
+# ╔═╡ be2d20cf-9393-4c84-873b-759f5d7c12b7
+
+
+# ╔═╡ c3c89aa5-d19b-483c-9991-f91622994bdb
+
+
+# ╔═╡ c76b42b2-dd62-4e1f-a6fc-9cf820adf706
 
 
 # ╔═╡ 6752f134-9f36-4646-a914-a916f757719b
+md"""
+# Functions/Code
+"""
+
+# ╔═╡ fe13fca1-1e66-46b5-a6c3-748ae39818e3
+md"""
+this is where we place **one and only one** function (however we might add multiple methods). I know it is strange as in other languages you often group things in classes. 
+"""
+
+# ╔═╡ f331135c-bae6-42cf-a206-f843f0452e8f
+"""
+$(TYPEDSIGNATURES)
+
+# Description
+Takes in a friends name and displays a hello message and then asks about the wheater
+
+# Examples
+### Example 1
+```.jl
+julia> SayHelloAndAskAboutWeather("steve")
+> $(SayHelloAndAskAboutWeather("steve"))
+```
+
+### Example 2
+```.jl
+julia> SayHelloAndAskAboutWeather("you")
+> $(SayHelloAndAskAboutWeather("you"))
+```
+"""
+function SayHelloAndAskAboutWeather(friend::String)::String
+	return MY_BEGINNING_STRING*" "*friend*". "*MY_END_STRING
+end
+
+# ╔═╡ 071c1327-363b-4730-b2a3-6f8064640321
+
+
+# ╔═╡ d788b824-68d1-4add-82d2-028bdd2f9f87
 
 
 # ╔═╡ 9f1effe5-f766-4f2e-aa4b-3967261fd84b
+md"""
+# Tests
+"""
 
+# ╔═╡ 0983fb3e-1a05-4aec-a723-589239e87597
+md"""
+here we will test the function
+"""
 
 # ╔═╡ a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+test1 = let
+	test_input = "you"
+	PlutoTest.@test SayHelloAndAskAboutWeather(test_input) == MY_BEGINNING_STRING*" "*test_input*". "*MY_END_STRING
+end
 
+# ╔═╡ e6febaa0-47ce-45fb-b151-582ca69e6852
+test2 = let
+	test_input = 1
+	PlutoTest.@test_throws MethodError SayHelloAndAskAboutWeather(test_input)
+end
+
+# ╔═╡ a32a585a-6103-43af-a808-85f848bef523
+
+
+# ╔═╡ 63557f30-9930-4d1f-ab3c-5d5e0cf0476d
+
+
+# ╔═╡ d869b531-ea57-45d8-b20d-5a56efe7b475
+
+
+# ╔═╡ 54b770b8-9051-4d1d-a00f-e2b222909d05
+md"""
+# Appendix
+"""
 
 # ╔═╡ f333aa56-2cbc-4caf-8fde-3515bbb2d977
 md"""
-# Import Packages
+## Import/Using External Packages
 """
+
+# ╔═╡ 0e8fc358-8ce8-44c0-87b2-f9cf49d2af7d
+md"""
+## Import/Using Internal Packages
+"""
+
+# ╔═╡ 6a05a91f-295e-490c-8fa6-5806729a15ce
+
+
+# ╔═╡ 716c5da3-58a4-469a-9fe1-1ce06b63acd9
+
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
+DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
 PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
+PlutoTest = "cb4044da-4d16-4ffa-a6a3-8cad7f73ebdc"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-PlutoTeachingTools = "~0.2.5"
-PlutoUI = "~0.7.50"
+DocStringExtensions = "~0.9.3"
+PlutoTeachingTools = "~0.2.11"
+PlutoTest = "~0.2.2"
+PlutoUI = "~0.7.51"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
@@ -63,7 +166,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.1"
 manifest_format = "2.0"
-project_hash = "69f995e0dc6a1c35a46792be048dc8abd510ce38"
+project_hash = "567b48565d786acc3849008dd66f7cf17f1c4f78"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -83,9 +186,9 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[deps.CodeTracking]]
 deps = ["InteractiveUtils", "UUIDs"]
-git-tree-sha1 = "4f619d394ac521dc59cb80a2cd8f78578e483a9d"
+git-tree-sha1 = "d730914ef30a06732bdd9f763f6cc32e92ffbff1"
 uuid = "da1fd8a2-8d9e-5ec2-8556-3022fb5608a2"
-version = "1.2.1"
+version = "1.3.1"
 
 [[deps.ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -105,6 +208,12 @@ uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 [[deps.Distributed]]
 deps = ["Random", "Serialization", "Sockets"]
 uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
+
+[[deps.DocStringExtensions]]
+deps = ["LibGit2"]
+git-tree-sha1 = "2fb1e02f2b635d0845df5d7c167fec4dd739b00d"
+uuid = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
+version = "0.9.3"
 
 [[deps.Downloads]]
 deps = ["ArgTools", "FileWatching", "LibCURL", "NetworkOptions"]
@@ -150,15 +259,15 @@ uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
 
 [[deps.JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
-git-tree-sha1 = "3c837543ddb02250ef42f4738347454f95079d4e"
+git-tree-sha1 = "31e996f0a15c7b280ba9f76636b3ff9e2ae58c9a"
 uuid = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
-version = "0.21.3"
+version = "0.21.4"
 
 [[deps.JuliaInterpreter]]
 deps = ["CodeTracking", "InteractiveUtils", "Random", "UUIDs"]
-git-tree-sha1 = "d9ae7a9081d9b1a3b2a5c1d3dac5e2fdaafbd538"
+git-tree-sha1 = "6a125e6a4cb391e0b9adbd1afa9e771c2179f8ef"
 uuid = "aa1ae85d-cabe-5617-a682-6adf51b2e16a"
-version = "0.9.22"
+version = "0.9.23"
 
 [[deps.LaTeXStrings]]
 git-tree-sha1 = "f2355693d6778a178ade15952b7ac47a4ff97996"
@@ -167,9 +276,9 @@ version = "1.3.0"
 
 [[deps.Latexify]]
 deps = ["Formatting", "InteractiveUtils", "LaTeXStrings", "MacroTools", "Markdown", "OrderedCollections", "Printf", "Requires"]
-git-tree-sha1 = "2422f47b34d4b127720a18f86fa7b1aa2e141f29"
+git-tree-sha1 = "8c57307b5d9bb3be1ff2da469063628631d4d51e"
 uuid = "23fbe1c1-3f47-55db-b15f-69d7ec21a316"
-version = "0.15.18"
+version = "0.15.21"
 
 [[deps.LibCURL]]
 deps = ["LibCURL_jll", "MozillaCACerts_jll"]
@@ -243,15 +352,15 @@ uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
 version = "0.3.20+0"
 
 [[deps.OrderedCollections]]
-git-tree-sha1 = "85f8e6578bf1f9ee0d11e7bb1b1456435479d47c"
+git-tree-sha1 = "d321bf2de576bf25ec4d3e4360faca399afca282"
 uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
-version = "1.4.1"
+version = "1.6.0"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6f4fbcd1ad45905a5dee3f4256fabb49aa2110c6"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.7"
+version = "2.5.8"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -272,21 +381,27 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "ea3e4ac2e49e3438815f8946fa7673b658e35bdb"
+git-tree-sha1 = "88222661708df26242d0bfb9237d023557d11718"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.5"
+version = "0.2.11"
+
+[[deps.PlutoTest]]
+deps = ["HypertextLiteral", "InteractiveUtils", "Markdown", "Test"]
+git-tree-sha1 = "17aa9b81106e661cffa1c4c36c17ee1c50a86eda"
+uuid = "cb4044da-4d16-4ffa-a6a3-8cad7f73ebdc"
+version = "0.2.2"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
-git-tree-sha1 = "5bb5129fdd62a2bbbe17c2756932259acf467386"
+git-tree-sha1 = "b478a748be27bd2f2c73a7690da219d0844db305"
 uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-version = "0.7.50"
+version = "0.7.51"
 
 [[deps.Preferences]]
 deps = ["TOML"]
-git-tree-sha1 = "47e5f437cc0e7ef2ce8406ce1e7e24d44915f88d"
+git-tree-sha1 = "7eb1686b4f04b82f96ed7a4ea5890a4f0c7a09f1"
 uuid = "21216c6a-2e73-6563-6e65-726566657250"
-version = "1.3.0"
+version = "1.4.0"
 
 [[deps.Printf]]
 deps = ["Unicode"]
@@ -313,9 +428,9 @@ version = "1.3.0"
 
 [[deps.Revise]]
 deps = ["CodeTracking", "Distributed", "FileWatching", "JuliaInterpreter", "LibGit2", "LoweredCodeUtils", "OrderedCollections", "Pkg", "REPL", "Requires", "UUIDs", "Unicode"]
-git-tree-sha1 = "90cb983381a9dc7d3dff5fb2d1ee52cd59877412"
+git-tree-sha1 = "feafdc70b2e6684314e188d95fe66d116de834a7"
 uuid = "295af30f-e4ad-537b-8983-00126c2a3abe"
-version = "3.5.1"
+version = "3.5.2"
 
 [[deps.SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
@@ -356,9 +471,9 @@ deps = ["InteractiveUtils", "Logging", "Random", "Serialization"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[deps.Tricks]]
-git-tree-sha1 = "6bac775f2d42a611cdfcd1fb217ee719630c4175"
+git-tree-sha1 = "aadb748be58b492045b4f56166b5188aa63ce549"
 uuid = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
-version = "0.1.6"
+version = "0.1.7"
 
 [[deps.URIs]]
 git-tree-sha1 = "074f993b0ca030848b897beff716d93aca60f06a"
@@ -394,15 +509,34 @@ version = "17.4.0+0"
 """
 
 # ╔═╡ Cell order:
-# ╠═bdacad08-a9b1-11ec-1013-45393b4e19c9
-# ╠═2d438832-40cd-45bf-9305-46f59a3fca33
-# ╠═4b62caa1-90a7-4451-a313-eb93badf618d
-# ╠═7e0348f6-2284-475d-a101-c6842b05db4c
-# ╠═e1386345-4493-4467-b634-8da57532fb11
-# ╠═6752f134-9f36-4646-a914-a916f757719b
-# ╠═9f1effe5-f766-4f2e-aa4b-3967261fd84b
+# ╟─bdacad08-a9b1-11ec-1013-45393b4e19c9
+# ╟─4b62caa1-90a7-4451-a313-eb93badf618d
+# ╟─7e0348f6-2284-475d-a101-c6842b05db4c
+# ╟─f9936e15-fda1-4902-9222-e546ee72b9ea
+# ╟─e1386345-4493-4467-b634-8da57532fb11
+# ╠═2cc56a9d-c4ab-45cb-b583-7ffc2a45ff51
+# ╠═e286b69d-9f4a-4307-916f-563f2c861a8e
+# ╠═3fa33fec-aca4-4ecd-aecc-e09e510e9131
+# ╠═be2d20cf-9393-4c84-873b-759f5d7c12b7
+# ╠═c3c89aa5-d19b-483c-9991-f91622994bdb
+# ╠═c76b42b2-dd62-4e1f-a6fc-9cf820adf706
+# ╟─6752f134-9f36-4646-a914-a916f757719b
+# ╟─fe13fca1-1e66-46b5-a6c3-748ae39818e3
+# ╠═f331135c-bae6-42cf-a206-f843f0452e8f
+# ╠═071c1327-363b-4730-b2a3-6f8064640321
+# ╠═d788b824-68d1-4add-82d2-028bdd2f9f87
+# ╟─9f1effe5-f766-4f2e-aa4b-3967261fd84b
+# ╟─0983fb3e-1a05-4aec-a723-589239e87597
 # ╠═a3ca2950-4bc0-45ed-9652-24ed589e1dfd
+# ╠═e6febaa0-47ce-45fb-b151-582ca69e6852
+# ╠═a32a585a-6103-43af-a808-85f848bef523
+# ╠═63557f30-9930-4d1f-ab3c-5d5e0cf0476d
+# ╠═d869b531-ea57-45d8-b20d-5a56efe7b475
+# ╟─54b770b8-9051-4d1d-a00f-e2b222909d05
 # ╟─f333aa56-2cbc-4caf-8fde-3515bbb2d977
 # ╠═79a6c1e6-b22e-4674-ba0a-8862336864e3
+# ╠═0e8fc358-8ce8-44c0-87b2-f9cf49d2af7d
+# ╠═6a05a91f-295e-490c-8fa6-5806729a15ce
+# ╠═716c5da3-58a4-469a-9fe1-1ce06b63acd9
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
